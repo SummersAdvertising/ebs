@@ -4,6 +4,7 @@
 	      <th align="left" class="x0 x1">置頂</th>
           <th align="left" class="x0 x2">日期</th>
           <th align="left">標題</th>
+          <th align="left">100字</th>
     </tr>
     
     <% @review.each do |review| %>
@@ -11,6 +12,7 @@
 		  <td class="x0"><%= image_tag("star.png") if review.ranking != 0 %></td>
 	      <td class="x0"><%= review.created_at.strftime('%Y-%m-%d') %></td>
 	      <td><%= link_to review.title, review_path(review) %></td>
+	      <td><p><%= review.article.get_meta.first(100) if review.article.get_meta.length > 0 %> <a href="<%= review_path( review ) %>">...more</a></p></td>
     </tr>
     <% end %>
   </table>
