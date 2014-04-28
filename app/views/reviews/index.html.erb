@@ -1,0 +1,23 @@
+<section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+	      <th align="left" class="x0 x1">置頂</th>
+          <th align="left" class="x0 x2">日期</th>
+          <th align="left">標題</th>
+    </tr>
+    
+    <% @review.each do |review| %>
+    <tr>
+		  <td class="x0"><%= image_tag("star.png") if review.ranking != 0 %></td>
+	      <td class="x0"><%= review.created_at.strftime('%Y-%m-%d') %></td>
+	      <td><%= link_to review.title, review_path(review) %></td>
+    </tr>
+    <% end %>
+  </table>
+</section>
+<!--list-->
+<section class="page">
+<%= paginate @review, :window => 2 %>
+</section>
+<!--page-->
+

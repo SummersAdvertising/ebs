@@ -1,0 +1,31 @@
+<script src="/js/editor.js"></script>
+<script src="/js/editor_p.js"></script>
+<script src="/js/editor_img.js"></script>
+<script src="/js/editor_list.js"></script>
+<script src="/js/editor_video.js"></script>
+<script src="/js/jquery.imgareaselect.pack.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
+
+<article _height="auto" id="news">
+  <section class="content">
+    <nav><a href="<%= root_url %>">首頁</a><span>></span><a>學生證言</a></nav>
+    <div class="inner">
+      <div class="right">
+        <header><span class="date"><%= @review.created_at.strftime('%Y年%m月%d日') %></span>
+          <h3><%= @review.title %></h3>
+        </header>        
+        <%= image_tag(@review.cover) %>
+        <article id="articleContent"></article>
+      </div>
+    </div>
+  </section>
+</article>
+
+
+<input id="article_content" style="display:none;" type="text" value="<%= @review.article.content %>">
+<script>
+	$(document).ready(function() {	
+		editor.output();	
+	});
+</script>

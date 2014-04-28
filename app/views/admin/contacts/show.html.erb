@@ -1,0 +1,123 @@
+<section class="hgroup">
+      <h2>個資</h2>
+    </section>
+    <!--hgroup-->
+    <section class="text text-show">
+      <div class="one">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th>填寫人：</th>
+            <% if @contact.isparent.present? %>
+            <td>家長代填</td>
+            <% else %>
+            <td>本人</td>
+            <% end %>
+          </tr>
+          <tr>
+            <th>姓名：</th>
+            <td><%= @contact.name %></td>
+          </tr>
+          <tr>
+            <th>出生年：</th>
+            <td><%= @contact.birthday.year %></td>
+          </tr>
+          <tr>
+            <th>連絡電話：</th>
+            <td><%= @contact.phone %></td>
+          </tr>
+          <tr>
+            <th>Email:：</th>
+            <td><%= @contact.email %></td>
+          </tr>
+        </table>
+      </div>
+    </section>   
+    <section class="hgroup">
+      <h2>程度評估</h2>
+    </section>
+    <!--hgroup-->
+    <section class="text text-show">
+      <div class="one">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th>教育程度：</th>
+            <td><%= @contact.education %>
+            	<% if !@contact.majorin.blank? %>
+            		(<%= @contact.majorin %>)
+    			<% end %>
+            </td>
+          </tr>
+          <tr>
+            <th>學習管道：</th>
+            <td>
+            	<% if !@contact.learningtype.blank? %>
+            		<%= @contact.learningtype %>
+            		<% if !@contact.institute.blank? || !@contact.period.blank?%>
+            			(<%= @contact.institute if !@contact.institute.blank? %><%= @contact.period if !@contact.period.blank?%>)
+            		<% end %>	
+        		<% else %>
+        			(未填寫)
+    			<% end %>
+            </td>
+          </tr>
+          <tr>
+            <th>英語證照：</th>
+            <td>
+            	<%= @contact.certification %>
+            	<% if !@contact.level.blank? %>
+            		(<%= @contact.level %>)
+        		<% else %>
+        			(未填寫)
+    			<% end %>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>  
+    <section class="hgroup">
+      <h2>學習心態與矯正評估</h2>
+    </section>
+    <!--hgroup-->
+     <section class="text text-show">
+      <div class="one">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th>學習目的：</th>
+            <td><%= @contact.purpose.join(",") %></td>
+          </tr>
+          <tr>
+            <th>加強英文：</th>
+            <td><%= @contact.weekness.join(",") %></td>
+          </tr>
+          <tr>
+            <th>遇到瓶頸：</th>
+            <td><%= @contact.bottleneck.join(",") %></td>
+          </tr>
+        </table>
+      </div>
+    </section>  
+    <section class="hgroup">
+      <h2>聯絡評估</h2>
+    </section>
+    <!--hgroup-->
+    <section class="text text-show">
+      <div class="one">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th valign="top">方便連絡：</th>
+            <td><%= @contact.availabletime.join(",") %></td>
+          </tr>
+          <tr>
+            <th valign="top">台北上課：</th>
+            <% if @contact.tpclass.present? %>
+            <td>是</td>
+            <% else %>
+            <td>否</td>
+            <% end %>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <!--text-->   
+    <section class="button"> <a href="<%= admin_contacts_path %>"><img src="/images/back.png">返回</a> </section>
+    <!--button-->

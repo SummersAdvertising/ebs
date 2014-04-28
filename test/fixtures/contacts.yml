@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  isparent: 
+  name: MyString
+  birthday: 2014-04-23
+  address: MyString
+  email: MyString
+  education: MyString
+  majorin: MyString
+  learningtype: MyString
+  institute: MyString
+  period: MyString
+  certification: MyString
+
+two:
+  isparent: 
+  name: MyString
+  birthday: 2014-04-23
+  address: MyString
+  email: MyString
+  education: MyString
+  majorin: MyString
+  learningtype: MyString
+  institute: MyString
+  period: MyString
+  certification: MyString

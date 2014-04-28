@@ -1,0 +1,61 @@
+<script src="/js/editor.js"></script>
+<script src="/js/editor_p.js"></script>
+<script src="/js/editor_img.js"></script>
+<script src="/js/editor_list.js"></script>
+<script src="/js/editor_video.js"></script>
+<script src="/js/jquery.imgareaselect.pack.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
+
+ <section class="title">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th><%= @review.created_at.strftime('%Y-%m-%d')%></th>
+      <td><%= @review.title %></td>
+    </tr>
+  </table>
+</section>
+<!--title-->    
+<section class="hgroup">
+  <h2>文章封面</h2>      
+</section>
+<!--hgroup-->
+<section class="text text-show">
+    	 <div class="half">
+    	 <img src="<%= @review.cover %>" width="100" height="100"></div>
+</section>
+
+	<section class="text text-show">
+      <div class="half">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th valign="top">學員名稱：</th>
+            <td><%= @review.name %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="half">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th valign="top">所上課程：</th>
+            <td><%= @review.course %></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <!--text-->
+<section class="text text-show"  id="articleContent">
+
+</section>    
+<!--text-->
+
+<section class="button"> <a href="<%= edit_admin_review_path(@review) %>"><img src="<%= image_path("edit.png") %>">編輯</a> <a href="<%= admin_reviews_path %>"><img src="<%= image_path("back.png") %>">返回</a> </section>
+<!--button-->
+    
+
+<input id="article_content" style="display:none;" type="text" value="<%= @review.article.content %>">
+<script>
+	$(document).ready(function() {	
+		editor.output();	
+	});
+</script>

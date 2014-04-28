@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<link rel="stylesheet" href="css/desktop.css">
+<![endif]-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+<meta name="Robots" content="index,follow"/>
+<meta http-equiv="content-language" content="zh-TW" />
+<title>EBS TEMP FRONT</title>
+
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/default.css">
+	<link rel="stylesheet" media="screen and (max-width: 543px)" href="/css/mobile.css" />
+	<link rel="stylesheet" media="screen and (min-width: 544px) and (max-width: 896px)" href="/css/tablet.css" />
+	<link rel="stylesheet" media="screen and (min-width: 897px)" href="/css/desktop.css" />
+	<link rel="stylesheet" href="/css/custom.css">
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+	  <script>
+  	window.onload= function() {
+	  <% if !flash[:notice].nil? %>
+	   alertify['success']('<%= flash[:notice] %>', 3000);
+	  <% end %>
+	  
+	  <% if !flash[:warning].nil? %>
+	  alertify['error']("<%= flash[:warning].html_safe %>", 3000); 
+	  <% end %>
+
+		$('a').click(function() {
+			if( window.location.toString().match(/page=\d+/) ) { 
+				document.cookie = ( 'last_page_num=' + window.location.toString().match(/page=\d+/)[0].split('=')[1] + ';' );
+
+			}
+		})
+		
+		$(window).bind('peditor-updated', function() {
+			
+			var main = $('section article');
+			
+			if ( (main.innerHeight() + 100) > $('[_height=auto]').height() ) {
+				$('[_height=auto]').height('inherit');
+			} else {
+				fullHeight();
+			}
+			
+		});
+		
+	}
+
+  </script>
+</head>
+
+<body>
+
+<header _height="none">
+  <section id="top"> <a id="nav-ctrl"><img src="<%= image_path("nav.png")%>"></a>
+    <div class="left">
+      <h1><a href="<%= root_url %>">EBS TEMP FRONT</a></h1>
+    </div>
+  </section>
+  <!--top--> 
+</header>
+<section id="main" _height="auto">
+		<article>    
+			<%= yield %>
+		</article>  
+</section>
+<!--main-->
+
+<footer _height="none"> Copyright © <a href="http://www.summers.com.tw/" target="_blank">Summers</a> </footer>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<nav>
+    <ul>
+      <li <%= 'class="active"'.html_safe if params[:controller] == 'admin/reviews' %>><a href="<%= admin_reviews_path %>" id="nav-3">學生證言</a></li>
+      <li <%= 'class="active"'.html_safe if params[:controller] == 'admin/contacts' %>><a href="<%= admin_contacts_path %>" id="nav-2">聯絡我們</a></li>
+      <li <%= 'class="active"'.html_safe if params[:controller] == 'admin/admins' %>><a href="<%= admin_admins_path %>" id="nav-8">使用者管理</a></li>
+    </ul>
+</nav>

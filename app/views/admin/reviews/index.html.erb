@@ -1,0 +1,29 @@
+<section class="button"><%= link_to image_tag('add.png') + '新增文章' , admin_reviews_path, :method => :post %>  </section>
+<!--button-->
+<section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+	      <th align="left" class="x0 x1">置頂</th>
+          <th align="left" class="x0 x2">日期</th>
+          <th align="left">標題</th>
+          <th align="left" class="x0 x1">編輯</th>
+          <th align="left" class="x1">刪除</th>
+    </tr>
+    
+    <% @review.each do |review| %>
+    <tr>
+		  <td class="x0"><%= image_tag("star.png") if review.ranking != 0 %></td>
+	      <td class="x0"><%= review.created_at.strftime('%Y-%m-%d') %></td>
+	      <td><%= link_to review.title, admin_review_path(review) %></td>
+	      <td class="x0"><a href="<%=  edit_admin_review_path(review) %>"><img src="<%= image_path("edit.png") %>"></a></td>
+	      <td><%= link_to  image_tag('delete.png'), admin_review_path(review), method: :delete, data: { confirm: 'Are you sure?' }  %></td>
+    </tr>
+    <% end %>
+  </table>
+</section>
+<!--list-->
+<section class="page">
+<%= paginate @review, :window => 1, :theme => "admin" %>
+</section>
+<!--page-->
+

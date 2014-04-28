@@ -1,0 +1,5 @@
+var iasParent = $(".imgareaselect-selection").parent();
+$("div[class^=imgareaselect]").remove();
+iasParent.remove();
+cover_preview = $("#cover_preview");
+cover_preview.html('<%= image_tag(@review.cover) %>');

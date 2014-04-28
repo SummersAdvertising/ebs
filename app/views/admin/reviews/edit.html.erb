@@ -1,0 +1,149 @@
+<script src="/js/jquery.colorbox-min.js"></script>
+<script src="/js/jquery.colorbox-zh-TW.js"></script>
+
+<script src="/js/editor.js"></script>
+<script src="/js/editor_p.js"></script>
+<script src="/js/editor_img.js"></script>
+<script src="/js/editor_list.js"></script>
+<script src="/js/editor_video.js"></script>
+<script src="/js/jquery.imgareaselect.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
+<link rel="stylesheet" type="text/css" href="/css/colorbox.css" />	   	    	    
+  
+  <%= form_for([:admin, @review]) do |f| %>
+    <section class="title">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <th><%= @review.created_at.strftime('%Y-%m-%d') %></th>
+          <td><%= f.text_field :title, :placeholder => '請輸入文章標題' %></td>
+        </tr>
+      </table>
+    </section>
+    <!--title-->
+    <section class="text text-edit">
+     <div class="one">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th valign="top" >文章封面：</th>
+            <td id="reviewCoverSection"><%= f.file_field :cover %></td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="one">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			 <tr>
+		    	<td>
+	    	    	<div id="cover_preview">
+	    	    	 <% if @review.cover.present? %>
+	    	    	 <%= image_tag(@review.cover, :id => "oldCoverSection") %>
+	    	    	 <% end %>
+	    	    	</div>
+	    	</td>
+		  </tr>
+		 </table>
+	</div>
+
+      <div class="half">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th valign="top">學員名稱：</th>
+            <td><%= f.text_field :name %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="half">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th valign="top">所上課程：</th>
+            <td><%= f.text_field :course %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="one">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th valign="top">設為置頂：</th>
+            <td>
+            	<%# f.select :ranking , @STATUS%>
+            	<%= f.check_box :ranking , { style: 'width:15px;position:relative;top:4px'  }, 1 , 0 %>
+            	<%# f.select :ranking, @ADMINS.map {|r| [r.name,r.id] } %>
+            	<%# collection_radio_buttons(:review, :title, Review.all, :id, :title) %>
+            	<%# collection_check_boxes(:review, :title, Review.all, :id, :title) %>
+            	<%# f.select :ranking , @STATUS%>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+      
+    <%= render :partial => 'admin/peditor/editor' %>
+  <section class="button"> <a href="javascript: document.getElementsByTagName('form')[0].submit();"><img src="<%= image_path("save.png") %>">儲存</a> <a href="<%= admin_review_path(@review) %>"><img src="<%= image_path("cancel.png") %>">取消</a> </section>
+  
+   <%= params %>
+	<%= fields_for @review.article do | a | %>
+	
+		<%= a.text_field :content, {:id => 'review_content', :size => "100"} %>
+	
+	<% end %>
+
+<% end %>
+
+ <div style="display:none">	    
+	    <div id="previewContainer">
+		    <h2>請在圖片上拖拉以完成您要的截圖範圍</h2>
+	    </div>
+    </div>
+
+<form accept-charset="UTF-8" action="upload_cover" data-remote="true" enctype="multipart/form-data" id="upload_cover" method="post"></form>
+
+<script type="text/javascript">
+
+	var hold = false;
+	
+$(document).ready(function(){
+
+	var originalClose = $.colorbox.close;
+	$.colorbox.close = function(){
+		if (hold) {			
+		  if ( confirm( '確定放棄圖片裁切？這將會刪除您的圖片。' )) {
+		  	hold = false;
+		  	
+		  	editor.img.reset();
+		  	
+		    originalClose();
+		  } 
+		} else {
+			originalClose();
+		}
+	 }
+
+	editor.init({ articleModel: 'review', photoUpload: '../../peditor/<%= @review.article.id %>/createPhoto',p_selectList: [],linkedp: true });
+
+	$("#submit").click(function(e){
+		e.preventDefault();
+
+		if(!editor.isPostNotSent()){
+			$("#edit_article_<%= @review.article.id %>").submit();
+		}
+		else{
+			editor.alert("段落編輯尚未完成。", "error");
+		}
+		
+		$('#articleContent').bind('peditor_updated', function() {
+			$('#main').height('inherit')
+		})
+		
+	});
+});
+//add
+	$("#review_cover").change(function(){
+	//$("#upload_cover").append($(this).hide()).submit();
+	$("#upload_cover").append($(this)).submit();
+	//$("#news_cover").hide();
+	//$("#oldCoverSection").hide();
+	$("#upload_cover").children().remove();
+	//$("#reviewCoverSection").append($(this));
+
+});</script>

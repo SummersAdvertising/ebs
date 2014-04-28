@@ -1,0 +1,27 @@
+
+<section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th align="left" class="x0 x2">日期</th>
+      <th align="left" class="x0 x2">姓名</th>
+      <th align="left" class="x0 x2">電話</th>
+      <th align="left" class="x1">刪除</th>
+    </tr>
+    
+    <% @contacts.each do |contact| %>
+	    <tr>
+	      <td class="x0"><%= contact.created_at.strftime('%Y-%m-%d') %></td>
+	      <td class="x0"><a href="<%= admin_contact_path( contact ) %>"> <%= contact.name%> </a></td>
+	      <td class="x0"> <a href="<%= admin_contact_path( contact ) %>"><%= contact.phone %></a></td>
+	      <td><%= link_to image_tag('delete.png'), admin_contact_path( contact ), :method => :delete, data: { confirm: "確定刪除 #{contact.name} 的留言嗎？" } %></td>
+	    </tr>
+    <% end %>
+  </table>
+</section>
+<!--list-->
+<section class="page">
+<%= paginate @contacts, :window => 1,:theme => "admin" %>
+</section>
+<!--page-->
+ 
+ 

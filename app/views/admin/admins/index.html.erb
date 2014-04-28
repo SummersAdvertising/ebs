@@ -1,0 +1,70 @@
+<%= form_for([:admin, @admin]) do | f |%>
+
+<% if @admin.errors.any? %>
+
+<script>
+        $(document).ready(function() {
+                <% @admin.errors.messages.each do | m | %>        
+                $('<p class="form-validation-tip"><%= m[1][1].nil? ? m[1][0] : m[1][1] %></p>').offset({ top: $('.field_with_errors input[name*=<%= m[0] %>]').offset().top }).insertBefore($('.field_with_errors input[name*=<%= m[0] %>]'));
+                <% end %>
+        });
+</script>
+
+<% end %>
+<section class="text text-edit">
+  <div class="half">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">名稱</th>
+        <td><%= f.text_field :name, :placeholder => "請輸入使用者名稱"  %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="half">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">帳號</th>
+        <td><%= f.text_field :email, :placeholder => "請輸入登入帳號"  %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="half">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">密碼</th>
+        <td><%= f.password_field :password %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="half">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th valign="top">確認密碼</th>
+        <td><%= f.password_field :password_confirmation %></td>
+      </tr>
+    </table>
+  </div>
+</section>
+<% end %>
+  <section class="button"> <a href="javascript: document.forms[0].submit();"><img src="<%= image_path("add.png") %>">新增帳號</a> </section>
+  <!--button-->  
+  <section class="list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th align="center" class="x2">使用者名稱</th>
+      <th align="left">使用者帳號</th>
+      <th align="center" class="x1">刪除</th>
+    </tr>
+  <% @admins.each do | admin | %>  	
+    <tr>
+      <td align="center"><%= admin.name %></td>
+      <td align="left"><%= admin.email %></td>
+      <td align="center"><%= link_to image_tag('delete.png'), admin_admin_path( admin ), :method => :delete, data: { confirm: "是否確定刪除使用者#{admin.name}? 此動作無法復原。" } %></a></td>
+    </tr>
+  <% end %>
+  </table>
+</section>
+  
+  </article>
+</section>
+<!--main-->

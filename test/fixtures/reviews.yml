@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  cover: MyString
+  name: MyString
+  course: MyString
+  ranking: 1
+  article_id: 1
+
+two:
+  title: MyString
+  cover: MyString
+  name: MyString
+  course: MyString
+  ranking: 1
+  article_id: 1

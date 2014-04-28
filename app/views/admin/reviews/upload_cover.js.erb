@@ -1,0 +1,62 @@
+//predefined crop csope
+var defaultX1 =50, defaultY1 = 50, defaultX2 = 150, defaultY2 = 150,defaultWidth=100,defaultHeight=100;
+//initial with value could skip waitting for  onSelectEnd event
+var resize_data = {"x1":defaultX1,"y1":defaultY1,"x2":defaultX2,"y2":defaultY2,"width":defaultWidth,"height":defaultHeight}; 
+
+cover_preview = $("#cover_preview");
+cover_preview.children().remove();
+//cover_preview.append('<img data-id="<%= @review.id.to_s.html_safe %>" src="<%= @review.cover.to_s.html_safe %>" />');
+
+cover_preview.append('<%= image_tag(@review.cover) %>');
+//cover_preview.html('<%= image_tag(@review.cover) %>');
+
+
+
+var btn = $('<button>完成截圖</button>').click(function(event){
+	event.preventDefault();
+	cover_preview.find("img").unbind();
+	
+	$.ajax({
+		method: 'POST',
+		url: '<%= resize_cover_admin_review_path(@review) %>',
+		data: resize_data,
+		success: function() {   			
+			$.colorbox.close();
+		}
+	});
+});
+		cover_preview.append('<br />').append(btn);
+
+//color box
+
+		var showResizeArea = function() {
+		
+			
+			 $.colorbox({ 
+			 	onComplete:function(){
+			 		
+			 		//on complete then load imgAreaSelect
+			 		
+					cover_preview.find("img").imgAreaSelect({
+					//$('#colorbox').find('img').imgAreaSelect({
+					persistent: true,
+					handles: false,
+					x1: defaultX1, y1: defaultY1, x2: defaultX2, y2: defaultY2,
+					//aspectRatio: '1.57895:1',
+					resizable: false, 
+					onSelectEnd: function(img, selection) {
+							resize_data = selection;
+							//alert(JSON.stringify(resize_data));
+						},
+					});
+			 		
+			 	},
+			 	inline: true, 
+			 	href: '#cover_preview'});	
+		}
+		
+		// delay for image load
+		setTimeout(showResizeArea, 500);
+		
+		
+		
