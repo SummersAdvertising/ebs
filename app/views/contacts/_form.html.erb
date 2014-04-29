@@ -25,7 +25,7 @@
               <% end %>
 
               	</td>
-              <!-- <td><%= f.check_box :isparent , { style: 'width:15px;position:relative;top:4px'  }, 1 , 0 %>本人</td> -->
+    
             </tr>
             
             <tr>
@@ -173,7 +173,7 @@
               <td>
               <% @yesorno.each_with_index do | yesorno, index | %>
               	<label>
-              	 <% if index == 0 %>
+              	 	<% if index == 0 %>
 				         <%= f.radio_button :tpclass, yesorno[1] , :class => 'radio' , :checked => true %> 
 				     <% else %>
 				     	<%= f.radio_button :tpclass, yesorno[1] , :class => 'radio' %> 
@@ -182,7 +182,8 @@
               	</label>
               <% end %>
               	</td>
-<!--               <td><%= f.check_box :tpclass , { style: 'width:15px;position:relative;top:4px'  }, 1 , 0 %>是</td> -->          
+              	
+            </tr>
           </table>
           <%= f.submit '送出' %>
         </div>      

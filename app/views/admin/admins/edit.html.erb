@@ -43,8 +43,25 @@
             <td><%= f.password_field :password_confirmation %></td>
           </tr>
         </table>
-      </div>      
+      </div>     
     </section>
+        <section class="hgroup">
+      <h2>其他</h2>
+      <p>(如不修改可不填此欄)</p>
+    </section>
+    <!--hgroup-->
+        <section class="text text-edit">
+      <div class="one">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th valign="top">詢問通知：</th>
+            <td>
+            	<%= f.check_box :isnotify , { style: 'width:15px;position:relative;top:4px'  }, 1 , 0 %>
+            </td>
+          </tr>
+        </table>
+      </div> 
+        </section>
     <!--text-->
     <section class="button">
 	    <%= f.submit '',{ :style => 'display: none;' } %><a href="javascript: $('input:submit[name=commit]').click();"><img src="<%= image_path("save.png") %>">儲存</a>

@@ -63,7 +63,12 @@
           <tr>
             <th>英語證照：</th>
             <td>
-            	<%= @contact.certification %>
+            	<% if !@contact.certification.blank? %>
+            	<%= @contact.certification%>
+            	<% else %>
+            	無
+            	<% end %>
+
             	<% if !@contact.level.blank? %>
             		(<%= @contact.level %>)
         		<% else %>

@@ -44,6 +44,16 @@
       </tr>
     </table>
   </div>
+        <div class="one">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th valign="top">收到詢問信通知：</th>
+            <td>
+            	<%= f.check_box :isnotify , { style: 'width:15px;position:relative;top:4px'  }, 1 , 0 %>
+            </td>
+          </tr>
+        </table>
+      </div> 
 </section>
 <% end %>
   <section class="button"> <a href="javascript: document.forms[0].submit();"><img src="<%= image_path("add.png") %>">新增帳號</a> </section>

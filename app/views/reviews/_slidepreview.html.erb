@@ -1,6 +1,6 @@
 <br>
 slide preview start here
-<% @reviews.each_with_index do |review, index|%>
+<% @reviews.each do |review|%>
 <br>
 <%= link_to review.title, review_path(review) %>
 <a href="<%=  review_path(review) %>"><%= image_tag(review.cover) %></a>
