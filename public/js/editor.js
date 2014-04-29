@@ -37,7 +37,7 @@ var editor = {
 			var editorList = $('<ul class="x3">');
 			editorList.addClass("editorList");
 
-			var sectionList = $("<div>").addClass("tab").append(editorList);
+			var sectionList = $("<section>").addClass("tab").append(editorList); //especially modified for ebs
 			$("#editorPanel").append(sectionList);
 
 			for(var index in editor.settings.elements){

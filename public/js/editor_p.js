@@ -49,16 +49,25 @@ editor.p = {
 
 		var text = $("<textarea>");
 		text.addClass("autogrow");
-		text.attr("id", "newParagraphContent").attr("placeholder", "新增段落").attr("cols", "50").attr("rows", "8");
+		//text.attr("id", "newParagraphContent").attr("placeholder", "新增段落").attr("cols", "50").attr("rows", "8"); //origin
+		text.attr("id", "newParagraphContent").attr("placeholder", "新增段落").attr("cols", "").attr("rows", ""); //modified for ebs
+		text.attr("style", "overflow: hidden; word-wrap: break-word; height: 42px;") //modified for ebs
+
+		var textareaDiv = $("<div>");
+		textareaDiv.attr("id","textarea_grower_0");
+		textareaDiv.attr("style","position: absolute; z-index: -1000; visibility: hidden; min-height: 20px; font-size: 13px; width: 898px; word-wrap: break-word;");
 
 		var table = $('<table width="100%" border="0" cellspacing="0" cellpadding="0"></table>');
-		table.append($('<tr>').append($('<td width="95%">').append(text))
-							  .append($('<td width="5%" class="send">')));
+		table.append($('<tr>').append($("<td colspan='2'>").append(text).append(textareaDiv)));
 
 		if(editor.settings.linkedp){
+			var linkImgIcon = $("<img>").attr("src", "/images/link.png");
 			var link = $("<input>");
 			link.attr("type", "text").attr("id", "newParagraphLink").attr("placeholder", "http://www.example.com").attr("size", "80");
-			editorChild.append(link);
+			//editorChild.append(link);
+		table.append($('<tr>').append($($("<td width='90' align='center'>").append(linkImgIcon)).append("    段落連結")).append($('<td>').append(link)));
+		
+		
 		}
 		
 		$(".editorContent").append(editorChild.append(table));
@@ -100,8 +109,8 @@ editor.p = {
 		this.bindControl(paragraphBox);
 	},
 	output: function(paragraph){
-		var paragraphBox = $("<div data-type ='p'>");
-		//paragraphBox.attr("data-type", "p");
+		var paragraphBox = $("<div class='part'>");
+		paragraphBox.attr("data-type", "p");
 
 		paragraph.content = editor.filter(paragraph.content, editor.n2br);
 

@@ -134,7 +134,7 @@ editor.img = {
 		this.bindControl(paragraphBox, paragraph.id);
 	},
 	output: function(paragraph){
-		var paragraphBox = $("<div>");
+		var paragraphBox = $("<div class='part'>"); //especially modified for ebs
 		paragraphBox.attr("data-type", "img");
 
 		var img = $("<img>");

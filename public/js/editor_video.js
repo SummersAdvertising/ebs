@@ -47,7 +47,7 @@ editor.video = {
 		this.bindControl(paragraphBox);
 	},
 	output: function(paragraph){
-		var paragraphBox = $("<div>");
+		var paragraphBox = $("<div class='part'>"); //especially modified for ebs
 		paragraphBox.attr("data-type", "video");
 
 		var iframe = $("<iframe>");
