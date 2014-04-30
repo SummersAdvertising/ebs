@@ -71,6 +71,4 @@ gem 'devise', github: 'plataformatec/devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem "remotipart"
-gem 'rmagick', '2.13.2'
 gem 'kaminari'
-gem 'thin'
