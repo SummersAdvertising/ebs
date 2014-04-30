@@ -59,7 +59,7 @@ end
 
 #myadd
 # Use Capistrano for deployment
-gem 'capistrano', group: :development
+gem 'capistrano', "3.0.1", group: :development
 gem 'capistrano-ext'
 
 # Use debugger
@@ -73,3 +73,4 @@ gem 'mini_magick'
 gem "remotipart"
 gem 'rmagick', '2.13.2'
 gem 'kaminari'
+gem 'thin'
