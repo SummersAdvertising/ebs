@@ -1,9 +1,9 @@
 Ebs::Application.routes.draw do
    
   
-      #testimonies
+      #testimonials
       #testimony
-  resources :testimonies, :controller => :reviews , :only => [ :index, :show]
+  resources :testimonials, :controller => :reviews , :only => [ :index, :show]
   #resources :reviews, :only => [ :index, :show]
   resources :contacts, :only => [:index, :new, :create]
   
@@ -46,6 +46,7 @@ Ebs::Application.routes.draw do
   end
   
   root :to => 'static_pages#index'
+  #root :to => 'static_pages#temp'
   
   get '(*url)'	 => 'errors#index'
   

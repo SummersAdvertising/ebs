@@ -5,8 +5,15 @@
         <tr>
           <th align="left" valign="top"><%= image_tag(review.cover) %><br>
             <span><%= review.name%></span></th>
-          <td align="left" valign="top"><p><%= link_to review.title, testimony_path(review) %></p>
-            <a href="<%=  testimony_path(review) %>">閱讀全文</a></td>
+          <td align="left" valign="top">
+          <p>
+         	 <%= link_to  testimonial_path(review)  do %>
+         	 	<span><%= review.course%></span><br>
+         	 	<%= review.title %>
+     	 	<% end %>
+           </p>
+            <a href="<%=  testimonial_path(review) %>">閱讀全文</a>
+            </td>
         </tr>
       </table>
     </div>

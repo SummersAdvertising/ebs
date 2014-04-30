@@ -312,8 +312,7 @@
               </tr>
               <tr>
                 <td class="text-right tableleft">*出生年</td>
-                <td><%= f.date_select :birthday, :start_year => Date.current.year, :end_year => Date.current.year-100,discard_day: true,discard_month: true, :class => "form-control" %>
-</td>
+                <td><%= f.date_select :birthday,{ :start_year => Date.current.year, :end_year => Date.current.year-100,discard_day: true,discard_month: true}, {:class=> 'form-control'} %></td>
               </tr>
 
               <tr>
@@ -331,7 +330,7 @@
                 <td class="text-right tableleft">*學英文的目的</td>
                 <td>
 	                 <% @purpose.each do | purpose | %>
-              	<label>
+              	<label class="checkbox-inline">
               	<%= f.check_box :purpose, { :multiple => true, :name => "contact[purpose][]" }, purpose[0], nil %> 
               		<%= purpose[1] %>
               	</label>
@@ -339,17 +338,18 @@
                 </td>
               </tr>
 
-                            <tr>
+              <tr>
                 <td class="text-right tableleft">*你最想加強英文</td>
                 <td>
-	          <% @weekness.each do | weekness | %>
-	          	<label class="checkbox-inline">
-	          	<%= f.check_box :weekness, { :multiple => true, :name => "contact[weekness][]" }, weekness[0], nil %> 
-	          		<%= weekness[1] %>
-	          	</label>
-	          <% end %>
-                    </td>
+	                <% @weekness.each do | weekness | %>
+	                <label class="checkbox-inline">
+		                <%= f.check_box :weekness, { :multiple => true, :name => "contact[weekness][]" }, weekness[0], nil %> 
+		                <%= weekness[1] %>
+		                </label>
+		                <% end %>
+                 </td>
               </tr>
+	  
 	  
 	    <tr>
                 <td class="text-right tableleft">*目前學英文的瓶頸是？</td>
@@ -367,7 +367,7 @@
                 <td class="text-right tableleft">*方便連絡的時間？</td>
                 <td>
                  <% @availabletime.each do | availabletime | %>
-<label class="checkbox-inline">
+                 <label class="checkbox-inline">
 	              	<%= f.check_box :availabletime, { :multiple => true, :name => "contact[availabletime][]" }, availabletime[0], nil %> 
 	              		<%= availabletime[1] %>
 	              	</label>
@@ -395,7 +395,7 @@
 	                             <tr>
                 <td class="text-right tableleft">*教育程度</td>
                 <td>
-	                <%= f.select :education , @education, :class=>"form-control"%>
+	                <%= f.select :education , @education,{}, {:class=>"form-control"}%>
                 </td>
               </tr>
 
@@ -408,7 +408,7 @@
               
               <tr>
                 <td class="text-right tableleft">最近的英語學習管道</td>
-                <td><%= f.select :learningtype , @learningtype, :class=>"form-control"%></td>
+                <td><%= f.select :learningtype , @learningtype,{}, {:class=>"form-control"}%></td>
               </tr>
 
              <tr>
@@ -687,11 +687,14 @@ $(document).ready(function(){
 	
 	function detectWidth(){
 		if($(window).width() <= 768 && $('.visible-xs').length){
+			$('.visible-xs').attr('style','display: block !important');
 			$('.hidden-xs').attr('style','display: none !important');
 		}
 		else{
 			$('.hidden-xs').attr('style','display: block !important');
+			$('.visible-xs').attr('style','display: none !important');
 		}
 	}
 })
 </script>
+

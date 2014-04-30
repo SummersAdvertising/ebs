@@ -24,7 +24,7 @@
         <tr>
 	       <th valign="top">*出生年</th>
 	       <td valign="top">
-              <%= f.date_select :birthday, :start_year => Date.current.year, :end_year => Date.current.year-100,discard_day: true,discard_month: true, :class => "form-control" %>
+              <%= f.date_select :birthday,{ :start_year => Date.current.year, :end_year => Date.current.year-100,discard_day: true,discard_month: true}, {:class=> 'form-control'} %>
           </td>
         </tr>
 
@@ -118,7 +118,7 @@
 
              <tr>
 	      <th valign="top">*教育程度</th>
-          <td><%= f.select :education , @education, :class=>"form-control"%></td>
+          <td><%= f.select :education , @education,{}, {:class=>"form-control"}%></td>
         </tr>
 
         <tr id="majorin">
@@ -129,7 +129,7 @@
 	    <tr>
         <th valign="top">最近的英語<br>
           學習管道</th>
-	      <td valign="top"><%= f.select :learningtype , @learningtype, :class=>"form-control"%></td>
+	      <td valign="top"><%= f.select :learningtype , @learningtype,{}, {:class=>"form-control"}%></td>
 	    </tr>
 
 	    <tr id ="period">

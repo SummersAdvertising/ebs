@@ -45,6 +45,10 @@ h1,h2,h3,h4,h5,h6, p{
 	}
 }
 
+#articleContent p{margin:50px 0}
+#articleContent img{max-width:100%;height:auto}
+.m-wrapper1 p span,.wrapper1 p span{color:#aaa}
+.notetitle a span,.notetitle > span{color:#aaa;font-size:16px}
 
 /*  主視覺  */
 

@@ -46,7 +46,7 @@
     			    <% @review.each do |review| %>
     			<!-- 1 -->
     			<div class="notebox">
-    				
+    								
     				<div class="notephoto hidden-xs">
     					<div><%= image_tag(review.cover, :class=> "studentphoto1") %></div>
     					<div class="sname"><%= review.name %></div>
@@ -54,14 +54,17 @@
     				
     				<div class="notetxt">
     					<div class="notetitle">
-    					<%= link_to review.title, testimony_path(review), class: "titlelink" %>
-    					</div>
-    					
+				         	 <%= link_to  testimonial_path(review) , class: "titlelink"  do %>
+				         	 	<span><%= review.course%></span><br>
+				         	 	<%= review.title %>
+				     	 	<% end %>
+     					</div>
+    					    					
     					<p class="notelink">
     					<% note = (review.article.get_meta.first(100) if review.article.get_meta.length > 0) %>
-    					<%= link_to  note,testimony_path(review), class: "txtlink" %>
+    					<%= link_to  note,testimonials_path(review), class: "txtlink" %>
     					</p>
-    					<%= link_to "閱讀全文", testimony_path(review), class: "notemore" %>
+    					<%= link_to "閱讀全文", testimonials_path(review), class: "notemore" %>
     				</div> <!-- end of notetxt -->
     				
     			</div><!-- end of notebox -->

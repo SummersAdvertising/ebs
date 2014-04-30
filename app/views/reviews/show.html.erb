@@ -20,7 +20,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="<%= root_url %>">回首頁</a></li>
-            <li><a href="<%= testimonies_path %>">回目錄</a></li>
+            <li><a href="<%= testimonials_path %>">回目錄</a></li>
           </ul>
         </div>
       </div>
@@ -39,7 +39,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="<%= root_url %>">回首頁</a></li>
-            <li><a href="<%= testimonies_path %>">回目錄</a></li>
+            <li><a href="<%= testimonials_path %>">回目錄</a></li>
           </ul>
         </div>
       </div>
@@ -59,15 +59,15 @@
     					<div class="sname"><%= @review.name %></div>
     				</div>
     				<div class="notetxt">
-    					<div class="notetitle"><%= @review.title %></div>
-    				</div>
+    					<div class="notetitle"><span><%= @review.course %></span><br><%= @review.title %></div>
+    				</div>    				
     			</div>
     			<div class="col-xs-12">
 						<p class="writings"  id="articleContent"/>
 	    		</div>
 	    		
 	    		<div class="col-xs-6 text-center">
-	    			<a href="<%= testimonies_path %>" class="homelink"><img src="/images/back1.jpg" width="62px" height="91px"></a>
+	    			<a href="<%= testimonials_path %>" class="homelink"><img src="/images/back1.jpg" width="62px" height="91px"></a>
 	    		</div>
 	    		<div class="col-xs-6 text-center">
 	    		<a href="<%= root_url %>" class="homelink"><img src="/images/home1.jpg" width="62px" height="91px"></a>
