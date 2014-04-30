@@ -54,14 +54,14 @@
     				
     				<div class="notetxt">
     					<div class="notetitle">
-    					<%= link_to review.title, review_path(review), class: "titlelink" %>
+    					<%= link_to review.title, testimony_path(review), class: "titlelink" %>
     					</div>
     					
     					<p class="notelink">
     					<% note = (review.article.get_meta.first(100) if review.article.get_meta.length > 0) %>
-    					<%= link_to  note,review_path(review), class: "txtlink" %>
+    					<%= link_to  note,testimony_path(review), class: "txtlink" %>
     					</p>
-    					<%= link_to "閱讀全文", review_path(review), class: "notemore" %>
+    					<%= link_to "閱讀全文", testimony_path(review), class: "notemore" %>
     				</div> <!-- end of notetxt -->
     				
     			</div><!-- end of notebox -->
