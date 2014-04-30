@@ -6,8 +6,44 @@
 <script src="/js/jquery.imgareaselect.pack.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
-
-<%= render :partial => "layouts/frontmenu" %>    
+<!-- 桌面版選單 -->
+    <div class="navbar navbar-inverse navbar-fixed-top hidden-xs">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="<%= root_url %>"><img src="/images/logo.gif"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="<%= root_url %>">回首頁</a></li>
+            <li><a href="<%= reviews_path %>">回目錄</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+<!-- 行動版選單 -->
+    <div class="navbar navbar-inverse navbar-fixed-top visible-xs">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="/images/logo_xs.gif" width="64px" height="62px"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="<%= root_url %>">回首頁</a></li>
+            <li><a href="<%= reviews_path %>">回目錄</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <div class="note_wrapper">
     	<div class="container">

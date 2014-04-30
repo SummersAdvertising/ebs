@@ -1,18 +1,8 @@
 <%= form_for(@contact) do |f| %>
-  <section class="content">    
-    <div class="inner">
-      <div style="overflow:hidden">
-       
-        <div class="left">
-          <h3>請填寫基本資料</h3>          
-        </div>
-       
-        <div class="right">
-          
-          <table border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <th><%= f.label :isparent, '*資料填寫人' %></th>
-              <td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+      	<th valign="top">*資料填寫人</th>
+              <td valign="top">
               <% @isparent.each_with_index do | isparent , index| %>
               	<label>
 			         <% if index == 0 %>
@@ -23,127 +13,67 @@
               		<%= isparent[0] %>              		
               	</label>
               <% end %>
-
               	</td>
-    
-            </tr>
-            
-            <tr>
-              <th><%= f.label :name, '*姓名' %></th>
-              <td><%= f.text_field :name, :class => 'text' , :required => true%></td>
-            </tr>
-            
-            <tr>
-              <th><%= f.label :birthday, '*出生年' %></th>
-              <td>
-	              <%= f.date_select :birthday, :start_year => Date.current.year, :end_year => Date.current.year-100,discard_day: true,discard_month: true %>
-              <%# f.select :birthday, ((Time.now.year - 100)..Time.now.year)  %>
-              
+      </tr>
+       <tr>
+	       <th valign="top">*姓名</th>
+              <td valign="top">
+              	<%= f.text_field :name, :class => 'form-control' , :required => true%>
               </td>
-<!--               <td><%= f.text_field :birthday, :class => 'text' %></td> -->
-            </tr>
-            
-            <tr>
-              <th><%= f.label :phone, '*聯絡電話' %></th>
-              <td><%= f.text_field :phone, :class => 'text'%></td>
-            </tr>
-            
-            <tr>
-              <th><%= f.label :email, '*Email' %></th>
-              <td><%= f.text_field :email, :class => 'text' ,:required => true%></td>
-            </tr>
+       </tr>     
+        <tr>
+	       <th valign="top">*出生年</th>
+	       <td valign="top">
+              <%= f.date_select :birthday, :start_year => Date.current.year, :end_year => Date.current.year-100,discard_day: true,discard_month: true, :class => "form-control" %>
+          </td>
+        </tr>
 
-            <tr>
-              <th><%= f.label :education, '*教育程度' %></th>
-              <td><%= f.select :education , @education%></td>
-            </tr>
-           
-           <tr id="majorin">
-              <th><%= f.label :majorin, '*科系' %></th>
-              <td><%= f.text_field :majorin, :class => 'text' %></td>
-            </tr>
-                  
-            <tr>
-              <th><%= f.label :learningtype, '從前的英語學習管道' %></th>
-              <td><%= f.select :learningtype , @learningtype%></td>
-            </tr>
-            	
-			<tr id ="period">
-              <th><%= f.label :period, '時間' %></th>
-              <td><%= f.text_field :period, :class => 'text' %></td>
-            </tr>
-                     
-            <tr id ="institute">
-              <th><%= f.label :institute, '機構名稱' %></th>
-              <td><%= f.text_field :institute, :class => 'text' %></td>
-            </tr>
-		   
-            <tr id="certification" >
-              <th><%= f.label :certification, '是否有英語證照' %></th>
-              	<td>
-              <% @certification.each_with_index do | certification, index | %> 
+         <tr>
+              <th valign="top">*聯絡電話</th>
+              <td><%= f.text_field :phone, :class => 'form-control', :type=>"tel"%></td>
+        </tr>
+            
+        <!--
+<tr>
+          <th valign="top">*Email</th>
+          <td><%# f.text_field :email, :class => 'text' ,:required => true%></td>
+        </tr>
+-->
+	  <tr>
+                 <th valign="top">*學英文的<br>
+          目的</th>
+          <td valign="top">
+          	 <!-- #check box 使用測試 -->
+              <% @purpose.each do | purpose | %>
               	<label>
-              	<% if index+1 == @certification.length %>
-				         <%= f.radio_button :certification, certification[1] , :class => 'radio' , :checked => true %> 
-				     <% else %>
-				     	<%= f.radio_button :certification, certification[1] , :class => 'radio' %> 
-				     <% end %>
-              		<%= certification[0] %>             
+              	<%= f.check_box :purpose, { :multiple => true, :name => "contact[purpose][]" }, purpose[0], nil %> 
+              		<%= purpose[1] %>
               	</label>
               <% end %>
-              	</td>
-              <!--<td><%# f.select :certification , @certification%></td> -->
-            </tr>
-            
-             <!--
-             <tr>
-              <th><%= f.label :certificationdetail, '證照自填' %></th>
-              <td><%= f.text_field :certificationdetail, :class => 'text' %></td>
-            </tr>
--->
-             <!--
+          </td>
+          <!-- <td><%= f.select :purpose , @purpose%></td> -->
+        </tr>             
+	  
+	   <tr>
+	     <th valign="top">*你最想加強<br>
+          英文</th>
+	      <td valign="top">
+	      	 <!-- #check box 使用測試 -->
+	          <% @weekness.each do | weekness | %>
+	          	<label>
+	          	<%= f.check_box :weekness, { :multiple => true, :name => "contact[weekness][]" }, weekness[0], nil %> 
+	          		<%= weekness[1] %>
+	          	</label>
+	          <% end %>
+	      </td>              
+	      <!-- <td><%= f.select :weekness , @weekness%></td> -->
+	    </tr>
 
-             <tr>
-              <th><%= f.label :score, '分數' %></th>
-              <td><%= f.text_field :score, :class => 'text' %></td>
-            </tr>
-            
--->
-            <tr id="level" style="display:none;">
-              <th><%= f.label :level, '分數或層級' %></th>
-              <td><%= f.text_field :level, :class => 'text' %></td>
-            </tr>
-             
+	                 
             <tr>
-              <th><%= f.label :purpose, '*學英文的目的' %></th>
-              <td>
-              	 <!-- #check box 使用測試 -->
-	              <% @purpose.each do | purpose | %>
-	              	<label>
-	              	<%= f.check_box :purpose, { :multiple => true, :name => "contact[purpose][]" }, purpose[0], nil %> 
-	              		<%= purpose[1] %>
-	              	</label>
-	              <% end %>
-              </td>
-              <!-- <td><%= f.select :purpose , @purpose%></td> -->
-            </tr>             
-            <tr>
-              <th><%= f.label :weekness, '*你最想加強英文' %></th>
-              <td>
-              	 <!-- #check box 使用測試 -->
-	              <% @weekness.each do | weekness | %>
-	              	<label>
-	              	<%= f.check_box :weekness, { :multiple => true, :name => "contact[weekness][]" }, weekness[0], nil %> 
-	              		<%= weekness[1] %>
-	              	</label>
-	              <% end %>
-              </td>              <!-- <td><%= f.select :weekness , @weekness%></td> -->
-            </tr>
-            
-            <tr>
-              <th><%= f.label :bottleneck, '*目前學英文的瓶頸是？' %></th>
-              <td>
-              	 <!-- #check box 使用測試 -->
+                 <th valign="top">*目前學英文
+          的瓶頸是？</th>
+              <td valign="top">
 	              <% @bottleneck.each do | bottleneck | %>
 	              	<label>
 	              	<%= f.check_box :bottleneck, { :multiple => true, :name => "contact[bottleneck][]" }, bottleneck[0], nil %> 
@@ -154,10 +84,10 @@
 <!--               <td><%= f.select :bottleneck , @bottleneck%></td> -->
             </tr>
             
-            <tr>
-              <th><%= f.label :availabletime, '*什麼時間方便連絡？' %></th>
-            <td>
-               <!-- #check box 使用測試 -->
+        <tr>
+              <th valign="top">*方便連絡的<br>
+          時間？</th>
+            <td valign="top">
 	              <% @availabletime.each do | availabletime | %>
 	              	<label>
 	              	<%= f.check_box :availabletime, { :multiple => true, :name => "contact[availabletime][]" }, availabletime[0], nil %> 
@@ -168,8 +98,9 @@
               <!-- <td><%= f.select :availabletime , @availabletime%></td> -->
             </tr>
             
-            <tr>
-              <th><%= f.label :tpclass, '*你是否願意到台北上課' %></th>
+              <tr>
+        <th valign="top">*你是否願意<br>
+          到台北上課</th>
               <td>
               <% @yesorno.each_with_index do | yesorno, index | %>
               	<label>
@@ -184,13 +115,81 @@
               	</td>
               	
             </tr>
-          </table>
-          <%= f.submit '送出' %>
-        </div>      
-      </div><!--overflow:hidden-->      
-    </div>
-  </section>
 
+             <tr>
+	      <th valign="top">*教育程度</th>
+          <td><%= f.select :education , @education, :class=>"form-control"%></td>
+        </tr>
+
+        <tr id="majorin">
+        <th valign="top">科系</th>
+	      <td valign="top"><%= f.text_field :majorin, :class => 'text', :class=>"form-control" %></td>
+	    </tr>
+        
+	    <tr>
+        <th valign="top">最近的英語<br>
+          學習管道</th>
+	      <td valign="top"><%= f.select :learningtype , @learningtype, :class=>"form-control"%></td>
+	    </tr>
+
+	    <tr id ="period">
+	        <th valign="top">時間</th>
+              <td valign="top"><%= f.text_field :period, :class => 'text', :class=>"form-control" %></td>
+            </tr>
+
+         <tr  id ="institute">
+	        <th valign="top">機構名稱</th>
+              <td valign="top"><%= f.text_field :institute, :class => 'text', :class=>"form-control" %></td>
+            </tr>
+
+         <tr id="certification" >
+        <th valign="top">是否有英語<br>
+          證照</th>
+              	<td valign="top">
+              <% @certification.each_with_index do | certification, index | %> 
+              	<label>
+              	<% if index+1 == @certification.length %>
+				         <%= f.radio_button :certification, certification[1] , :class => 'radio' , :checked => true %> 
+				     <% else %>
+				     	<%= f.radio_button :certification, certification[1] , :class => 'radio' %> 
+				     <% end %>
+              		<%= certification[0] %>             
+              	</label>
+              <% end %>
+              	</td>
+              <!--<td><%# f.select :certification , @certification%></td> -->
+            </tr>
+
+            <tr id="level" style="display:none;">
+              <th valign="top">分數或層級</th>
+	            <td><%= f.text_field :level, :class => 'text', :class=>"form-control" %></td>
+            </tr>
+    </table>
+    <div class="text-center">
+     <%= f.submit '送出', :class=> "btn btn-primary btn-lg" %>
+    </div>
+
+   
+   
+                       	
+			
+                     
+       		   
+                      
+             <!--
+             <tr>
+              <th><%= f.label :certificationdetail, '證照自填' %></th>
+              <td><%= f.text_field :certificationdetail, :class => 'text' %></td>
+            </tr>
+-->
+             <!--
+
+             <tr>
+              <th><%= f.label :score, '分數' %></th>
+              <td><%= f.text_field :score, :class => 'text' %></td>
+            </tr>
+            
+-->
 
 <% end %>
 <script>

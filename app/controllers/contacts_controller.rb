@@ -18,6 +18,7 @@ class ContactsController < ApplicationController
 	def create
 
 		    @contact = Contact.new(contact_params)
+			@reviews = Review.order( :ranking => :desc ,:created_at => :desc ).limit(3);
 			
 		    respond_to do |format|
 		      if @contact.save

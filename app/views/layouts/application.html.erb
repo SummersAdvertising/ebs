@@ -4,9 +4,6 @@
 <meta charset="utf-8">
 	<!-- 通過為viewport meta標籤添加user-scalable=no可以禁用其縮放（zooming）功能。 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="/css/bootstrap.css">
-	<link rel="stylesheet" href="/css/main.css">
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -25,11 +22,14 @@
 	<meta property="og:image" content="http://網址/fb.jpg"/>
 	<meta name="DC.Rights" content="ebs"/>
 	<meta name="DC.Date" content="2014-4-27"/>
-<title>EBS TEMP FRONT</title>
+<title>ebs</title>
 
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application" %>
 	<%= csrf_meta_tags %>
+		<!-- Bootstrap -->
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/main.css">
 	  <script>
   	window.onload= function() {
 	  <% if !flash[:notice].nil? %>

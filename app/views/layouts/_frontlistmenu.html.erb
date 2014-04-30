@@ -12,6 +12,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="<%= root_url %>">回首頁</a></li>
+            <li><a href="<%= reviews_path %>">回目錄</a></li>
           </ul>
         </div>
       </div>
@@ -30,54 +31,8 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="<%= root_url %>">回首頁</a></li>
+            <li><a href="<%= reviews_path %>">回目錄</a></li>
           </ul>
         </div>
       </div>
     </div>
-
-    <div class="note_wrapper">
-    	<div class="container">
-
-    		<div class="col-md-10 col-md-offset-1 col-xs-12">
-    			<h1>ebs 學生證言 - 目錄</h1>
-    		</div>
-    		
-    		<div class="col-md-10 col-md-offset-1 col-xs-12 notepaper">
-    			    <% @review.each do |review| %>
-    			<!-- 1 -->
-    			<div class="notebox">
-    				
-    				<div class="notephoto hidden-xs">
-    					<div><%= image_tag(review.cover, :class=> "studentphoto1") %></div>
-    					<div class="sname"><%= review.name %></div>
-    				</div>
-    				
-    				<div class="notetxt">
-    					<div class="notetitle">
-    					<%= link_to review.title, review_path(review), class: "titlelink" %>
-    					</div>
-    					
-    					<p class="notelink">
-    					<% note = (review.article.get_meta.first(100) if review.article.get_meta.length > 0) %>
-    					<%= link_to  note,review_path(review), class: "txtlink" %>
-    					</p>
-    					<%= link_to "閱讀全文", review_path(review), class: "notemore" %>
-    				</div> <!-- end of notetxt -->
-    				
-    			</div><!-- end of notebox -->
-    			  <% end %>
-
-				<!--list-->
-
-				<%= paginate @review, :window => 5 ,:theme =>"default"%>
-
-	
-				<!--page-->
-				<div class="col-xs-12 text-center">
-					<a href="<%= root_url %>" class="homelink"><img src="/images/home1.jpg" width="62px" height="91px"></a>
-				</div>
-
-    		</div><!-- end of notepaper -->
-	</div><!-- end of container-->
-</div><!-- end of  note_wrapper-->
-

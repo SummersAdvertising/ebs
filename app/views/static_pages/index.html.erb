@@ -1,10 +1,697 @@
-this is static pages index page
-<br/><br/><br/><br/>
+<!-- 桌面版選單 -->
+<div class="navbar navbar-inverse navbar-fixed-top hidden-xs">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="<%= root_url %>"><img src="/images/logo.gif"></a> </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="#w1">學生證言</a></li>
+        <li><a href="#w2">企業背景</a></li>
+        <li><a href="#w3">教學理念</a></li>
+        <li><a href="#w7">ebs 價值</a></li>
+        <li><a href="#w4">師資介紹</a></li>
+        <li><a href="#w5">課程介紹</a></li>
+        <li><a href="#w6">與我聯絡</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- 行動版選單 -->
+<div class="navbar navbar-inverse navbar-fixed-top visible-xs">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="<%= root_url %>"><img src="/images/logo_xs.gif" width="64px" height="62px"></a> </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="#m-w1">證言</a></li>
+        <li><a href="#m-w2">理念</a></li>
+        <li><a href="#m-w3">師資</a></li>
+        <li><a href="#m-w4">課程</a></li>
+        <li><a href="#m-f">聯絡</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<%= render :partial => "reviews/slidepreview" %>
+<!-- 桌面版主視覺 -->
+<div class="topbanner hidden-xs">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <h1>找對需求與方法，設計最有效的英文課</h1>
+        <h4>ebs 英語中心，讓你學英文滿載而歸</h4>
+        <a href="#w6"><button type="button" class="btn btn-primary btn-lg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;與我聯絡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 手機版主視覺 -->
+<div class="topbanner visible-xs">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>找對需求與方法，設計最有效的英文課</h2>
+        <h4>ebs 英語中心，讓你學英文滿載而歸</h4>
+        <a href="#m-f"><button type="button" class="btn btn-primary btn-lg">&nbsp;&nbsp;&nbsp;與我聯絡&nbsp;&nbsp;&nbsp;</button></a>
+      </div>
+    </div>
+  </div>
+</div>
 
-<a href="<%= new_contact_path %>">與我聯絡</a><br/>
-<br/><br/><br/><br/>
-<a href="<%= reviews_path %>">證言列表</a><br/>
-<br/><br/><br/><br/>
-<%= render :partial => "contacts/form" %>
+<!-- 桌面板內容 --> 
+
+<!-- 學員見證 -->
+
+<div class="wrapper1 hidden-xs">
+<a id="w1" class="anchor">&nbsp;</a>
+  <div class="container">
+    	<%= render :partial => "reviews/slidepreview" %>
+      </div>
+</div>
+
+<!-- 前言與連結 -->
+<div class="container intro hidden-xs">
+<a id="w2" class="anchor">&nbsp;</a>
+  <div class="row">
+    <div class="col-sm-9">
+      <h2>ebs 讓你不再成為一塊磚</h2>
+      <div class="introtxt"> 「All in all it's just another brick in the wall，頂多，也只是牆上另一塊磚，」經典搖滾樂團 Pink Floyd 的歌詞，正好說明了坊間英語教育的困境，每個人都被教成同一個樣子！就像 ebs 創業夥伴，每一位都在年輕時認真學習英文，曾經靠英文獲得了工作、移民，但當我們需要更深入使用英文時，如與外國人社交、討論時事、談論更深的專業，想要活得更好時，我們都發現：英文說不出來，需要換一套方法學習。
+        所以我們創立 ebs 英語中心，設計從學習者出發的目的式英文教學法，先幫你找到「學習目的」，再「量身訂做」教學計劃，顛覆一般標準化、老師作主的英文課，以學生為核心，學你關心的事，學你人生或工作的目標，學你想要的英文，幫助你的英文一輩子都能進步。 </div>
+    </div>
+    <div class="col-sm-3 link text-center"> <a href="http://www.ebs-education.com/index.php?lang=tw" target="_blank">ebs 舊站</a><br>
+      <a href="https://www.facebook.com/EBSEducationalConsultancy" target="_blank">臉書粉絲團</a><br>
+      <a href="https://www.youtube.com/channel/UCXWgHEBUoSz34gz_fHjCYnA/feed?filter=2" target="_blank">Youtube 專頁</a><br>
+      <a href="http://ebseducation.pixnet.net/blog" target="_blank">官方部落格</a> </div>
+  </div>
+</div>
+
+<!-- 教學理念 -->
+<div class="wrapper2 hidden-xs">
+<a id="w3" class="anchor">&nbsp;</a>
+  <div class="container">
+    <div class="tech0">
+      <h2>ebs 目的式英語教學法：<br>
+        將志向、興趣、英文熔為一體</h2>
+    </div>
+    <div class="tech1">
+      <h3>目的式英語教學法，需求即教材</h3>
+      <p>想把英文說得更好？這種空泛的學英文目的在 ebs 並不存在！進入 ebs，我們會以深度訪談的形式發掘「英文」能如何幫助你，接著設計專屬的教學計劃。
+        ebs 有豐富的生活與職場經驗，能幫助你定出類似以下的學習目的：在英文會議中強力陳述意見、在社交場合侃侃而談，或針對專業或興趣學習英文，如科技、外交、藝術、美食等。目的確認後，再挑選適合的老師與教材，ebs 目的式英語教學法，幫助你與英文密不可分，持續進步。 </p>
+    </div>
+    <div class="tech2">
+      <h3>不適合的老師就換掉</h3>
+      <p>在 ebs，只要學習過程中你覺得老師不適合，就有權利換人，我們為您推薦專業的教師，配對時也審慎考慮性格投契度，但完全尊重你的感覺與決定，此外當你的程度進步了、學習目的改變了，我們也會主動為您更換老師，從一而終並非學好英文的美德，配合你的階段需求才是老師的義務。
+        你的每一堂課都有 ebs 顧問評估上課狀況、進步程度，有時候老師告訴我們，這堂課跟你聊天聊得很開心，我們可能不認為這是個好現象，因為這或許表示你處於停滯期，沒有進步，我們會要求老師帶你繼續前進。 </p>
+    </div>
+    <div class="tech3">
+      <h3>真人一對一教學，無可取代</h3>
+      <p>面對面是最有威力的語言學習法，師生之間的互動直接，老師更容易帶領你模仿講出完整的句子，習慣英文思考，是對你最有利的學習方式。 </p>
+    </div>
+    <div class="tech4">
+      <h3>兒童英語，大量口說，主題活潑</h3>
+      <p>ebs 的孩子上課就像外國電影場景：外籍老師授課，活潑的課程內容，用英語融合數學、藝術、博物館探險…等主題，學生有大量口說機會，因此 ebs 的孩子喜歡講英語，讓英語成為自然使用的第二語言。 </p>
+    </div>
+  </div>
+</div>
+
+<!-- 五星級服務 -->
+<div class="wrapper3 hidden-xs">
+<a id="w7" class="anchor">&nbsp;</a>
+  <div class="container">
+    <h2>五星級訂製英文教學服務，滿足你的學習需求</h2>
+  </div>
+</div>
+<div class="container hidden-xs start">
+  <div class="start1">
+    <h3>課程規劃符合所需，全盤了解再做決定</h3>
+    <p>我們用心發掘現在對你最有用的英文，確立學習目的，精心打造教學計畫，包括：</p>
+    <p class="list"> 1. 從 ebs 英語顧問群中，為你選擇專業與個性都適合你的老師。<br>
+      2. 從你的目的出發，設計最適合你的課程內容。</p>
+    <p>對於課程規劃，你可以提出任何疑問和意見，我們非常樂於與你討論，你是英文課的主角，擁有完全的決定權。</p>
+  </div>
+  <div class="start2">
+    <h3>教學品質全程控管，師生不會放牛吃草</h3>
+    <p>我們對課程品質有著十分的堅持，主動、長期追蹤上課成效：</p>
+    <p class="list"><span class="title">堂堂追蹤－</span>你的每一堂課，老師都須填寫進度報告表，每一份報告表都會寄給你留
+      存，並聽取你的回饋。<br>
+      <span class="title">顧問跟堂－</span>ebs 顧問在課程初期會直接坐在教學現場，觀察真實的上課狀況，確保
+      教學品質達到我們要求的高標準。<br>
+      <span class="title">親訪學員－</span>我們重視你的回饋和上課情緒，因此會時常和你坐下來聊一聊，即使是
+      外教課程，也會與你保持一個月連絡一次。</p>
+  </div>
+  <div class="start3">
+    <h3>課程進度穩定前進，看得到自己的進步</h3>
+    <p>量身訂做的教學最怕憑著感覺走，好像有進步又說不清楚，所以我們會帶進教材，會教文法、句型，隨著教材難度的進展，你可以清楚看見自己的進步；兒童課程的設計也是根據同樣的原則，上課內容活潑，但依然保持進度。</p>
+  </div>
+  <div class="start4">
+    <h3>教學方法貫徹執行，幫你複製成功經驗</h3>
+    <p>每位 ebs 的老師都經過面試、培訓、試教層層關卡，有能力以我們要求的教學方法為你上課，例如問與答的教學，必須確實帶領你模仿老師剛剛說過的完整句子，不能只因為聽懂你的回答就往下走，也須評估你的進步，帶進新的教材，幫助你的程度持續提升。</p>
+  </div>
+  <div class="start5">
+    <h3>退費保證貼心承諾，不怕風險安心上課</h3>
+    <p>如果你對外教老師不適應，我們會免費更換外教老師，兩週內更換不成功，你有權申請退費。<br>
+      <br>
+      <br>
+    </p>
+  </div>
+</div>
+<div class="wrapper4 hidden-xs"> <img src="/images/bstrat.png"> </div>
+
+<!-- 精選全球優秀教師 -->
+
+<div class="wrapper8 hidden-xs">
+<a id="w4" class="anchor">&nbsp;</a>
+<div class="container text-center hidden-xs">
+
+  <div class="gtitle"> <img src="/images/cir.png">
+    <h2>ebs 精選全球優秀英語教師<br>
+      是你的全方位英語顧問</h2>
+    <p>ebs 以高標準選擇師資，讓您享有最好的教學品質</p>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 text-center globaltxt"> 外籍師資均來自英語為母語的國家（美英加澳紐…），帶給學生真實的文化交流經驗。 </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 text-center globaltxt"> 受過專業英語教學訓練，擁有 TEFL、TESL 教學認證，會說英語與會教英語是截然不同的兩件事，ebs 只接受專業的英語老師。 </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 text-center globaltxt"> 在美洲、歐亞地區，具 1～5 年以上教學經驗，經驗是無法速成的珍貴資歷，我們重視實務經驗，基本上不接受毫無社會體驗的大學畢業生。 </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 text-center globaltxt"> 擁有多元豐富的背景，例如管理、科技、娛樂、行銷等，我們的學生來自社會各界，老師也要有能力提出職涯與生涯建議。 </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 text-center globaltxt"> 認同 ebs 教學理念，並接受 ebs 教學方法培訓，包含定期的教學示範、教學檢討，以及不定期的教學觀摩，我們隨時與老師溝通，掌握教學品質。 </div>
+  </div>
+</div>
+</div>
+<!-- 目的式課程 -->
+
+<div class="wrapper5 hidden-xs"> <img src="/images/clock.gif"> </div>
+<div class="wrapper6 hidden-xs ebsclass">
+<a id="w5" class="anchor">&nbsp;</a>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 classh">
+        <div class="classname">ebs 目的式課程 1</div>
+        <div class="classtitle1">
+          <h2>一對一真人教學</h2>
+          <p>效果最好的行為模仿學習法，快速突破瓶頸</p>
+        </div>
+        <div class="classtxt">
+          <p>面對面是最有威力的語言學習法，師生大量互動，暢談你有興趣的主題，老師可直接調整你的錯誤，並帶領你完整模仿正確句型用法，自然習慣英文思考，ebs 一對一教學有規劃完善的課程進度，不因上課形式自由而流於散漫，更注重教學方法的培訓，讓經驗豐富的老師帶你突破學習瓶頸。</p>
+          <p class="classlist"> 1. 顧問級師資設計專屬教學計畫，100% 符合學習需求<br>
+            2. 在老師帶領下模仿講出完整句子，學習效果快速扎實<br>
+            3. 自然習慣英文思考，擺脫中翻英模式<br>
+            4. 教學方法定期培訓，有技巧打通學生各種學習關卡<br>
+            5. 每堂課都有進度報告表，學習歷程清楚紀錄，看得見自己的進步<br>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 classh">
+        <div class="classname">ebs 目的式課程 2</div>
+        <div class="classtitle2">
+          <h2>ebs 不可能任務中心</h2>
+          <p>各路高手為你解決棘手英語任務，英文急訓</p>
+        </div>
+        <div class="classtxt">
+          <p><b>任務 1：</b>某大學教授下個月即將赴德國，用英文發表重要學術報告，本身精通日文但英文程度不佳的他，如何在 30 天內提升英語能力？<br>
+            <br>
+            <b>任務 2：</b>某高中生是蠶豆症患者，即將到美國遊學並住在寄宿家庭，心急的父親想與寄宿家庭溝通孩子飲食、藥物方面許多繁雜的注意事項，他該如何在最短時間學習蠶豆症專業英文，並與寄宿家庭順利溝通？
+            各式各樣緊急、困難、不可能的英語任務，請交給 ebs 不可能任務中心為你解決，我們有跨領域人脈資源、教學技巧純熟的老師，能立刻成立專案小組，密集提升你的英文能力，危機漂亮解除！</p>
+          <p class="classlist"> 1. 只學特殊場合需要的英語，不浪費時間在一般課程<br>
+            2. 專家提供產業、文化等的必要建議，解析溝通眉角<br>
+            3. 密集英語教學訓練，每一次練習都在解決問題 </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 classh">
+        <div class="classname">ebs 目的式課程 3</div>
+        <div class="classtitle3">
+          <h2>企業訓練課程</h2>
+          <p>快速診斷員工英語弱點，針對性補強提升英語力</p>
+        </div>
+        <div class="classtxt">
+          <p class="classlist"> 1. 大量實境演練，課程內容可立即帶入職場應用<br>
+            2. 商務口說英語：得體的職場應對、跨文化溝通要點、召開有效率的英語會議<br>
+            3. 商業簡報技巧：分析簡報訊息、掌握聽眾需求、熟練簡報常用術語、說故事技巧<br>
+            4. 商業 email 寫作：信件格式、實用句型、特殊書信（如弔唁信）寫作要領<br>
+            5. 客製化企業培訓課程：ebs 專業顧問團隊，歡迎企業提出需求<br>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 classh">
+        <div class="classname">ebs 目的式課程 4</div>
+        <div class="classtitle4">
+          <h2>兒童英語課程</h2>
+          <p>大量口說習慣英語，就像習慣國語</p>
+        </div>
+        <div class="classtxt">
+          <p>兒童學英文的目的，是要覺得使用英語是一件很自然的事，因此 ebs 兒童英語由外籍老師授課，鼓勵發言，每一堂課孩子都有大量口說機會，且非刻板英語課，而是用英語學習天文、藝術、數學的同時，帶進 be 動詞、過去進行式等根據難度層級劃分的語言進程，讓孩子擺脫考試壓力，又能提升英文程度。</p>
+          <p class="classlist"> ebs 兒童英語課程項目<br>
+            1. 兒童英語一對一教學<br>
+            2. 兒童英語 6 人精緻小班<br>
+            3. 與學校合作開辦：寒暑假營隊、課後輔導班、課後社團<br>
+            <br>
+            ebs 兒童英語課程特色<br>
+            1. 大量口說，鼓勵發言，自然習慣使用英語<br>
+            2. 跨學科設計，用英語學習天文、藝術、數學等主題，教材活潑有趣<br>
+            3. 小組任務設計，如博物館探險、超市購物大考驗，融合遊戲與生活<br>
+            4. 帶進教材進度，學習目標明確，英文進步看得見<br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+
+<!-- 與我聯絡 -->
+<div class="wrapper8 hidden-xs">
+<a id="w6" class="anchor">&nbsp;</a>
+<div class="container hidden-xs">
+  <div class="contact">
+    <p>與我聯絡<small>*為必填</small></p>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 classh">
+      <div class="table-responsive">
+       <%= form_for(@contact) do |f| %>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td class="text-right tableleft">*資料填寫人</td>
+                <td>
+                <div class="radio radio-inline">
+                 <% @isparent.each_with_index do | isparent , index| %>
+              	<label>
+			         <% if index == 0 %>
+				         <%= f.radio_button :isparent, isparent[1] ,  :checked => true %> 
+				     <% else %>
+				     	<%= f.radio_button :isparent, isparent[1]  %> 
+				     <% end %>
+              		<%= isparent[0] %>              		
+              	</label></div>
+              <% end %>
+                  </td>
+              </tr>
+              
+                 <tr>
+                <td class="text-right tableleft">*姓名</td>
+                <td><%= f.text_field :name, :class => 'form-control' , :required => true,:placeholder=>"輸入姓名"%>
+              </tr>
+              <tr>
+                <td class="text-right tableleft">*出生年</td>
+                <td><%= f.date_select :birthday, :start_year => Date.current.year, :end_year => Date.current.year-100,discard_day: true,discard_month: true, :class => "form-control" %>
+</td>
+              </tr>
+
+              <tr>
+                <td class="text-right tableleft">*連絡電話</td>
+                <td><%= f.text_field :phone, :class => 'form-control', :placeholder=>"輸入電話"%>
+              </tr>
+              
+              <tr>
+                <td class="text-right tableleft">*email</td>
+                <td><%= f.text_field :email, :class => 'form-control' ,:required => true, :placeholder=>"輸入email"%>
+              </tr>
+            
+            
+              <tr>
+                <td class="text-right tableleft">*學英文的目的</td>
+                <td>
+	                 <% @purpose.each do | purpose | %>
+              	<label>
+              	<%= f.check_box :purpose, { :multiple => true, :name => "contact[purpose][]" }, purpose[0], nil %> 
+              		<%= purpose[1] %>
+              	</label>
+              <% end %>
+                </td>
+              </tr>
+
+                            <tr>
+                <td class="text-right tableleft">*你最想加強英文</td>
+                <td>
+	          <% @weekness.each do | weekness | %>
+	          	<label class="checkbox-inline">
+	          	<%= f.check_box :weekness, { :multiple => true, :name => "contact[weekness][]" }, weekness[0], nil %> 
+	          		<%= weekness[1] %>
+	          	</label>
+	          <% end %>
+                    </td>
+              </tr>
+	  
+	    <tr>
+                <td class="text-right tableleft">*目前學英文的瓶頸是？</td>
+                <td>
+                <% @bottleneck.each do | bottleneck | %>
+					<label class="checkbox-inline">
+	              	<%= f.check_box :bottleneck, { :multiple => true, :name => "contact[bottleneck][]" }, bottleneck[0], nil %> 
+	              		<%= bottleneck[1] %>
+	              	</label>
+	              <% end %>
+	                  </td>
+              </tr>
+
+	      <tr>
+                <td class="text-right tableleft">*方便連絡的時間？</td>
+                <td>
+                 <% @availabletime.each do | availabletime | %>
+<label class="checkbox-inline">
+	              	<%= f.check_box :availabletime, { :multiple => true, :name => "contact[availabletime][]" }, availabletime[0], nil %> 
+	              		<%= availabletime[1] %>
+	              	</label>
+	              <% end %>
+                    </td>
+              </tr>
+                  <tr>
+                <td class="text-right tableleft">*你是否願意到台北上課</td>
+                <td>
+                <div class="radio radio-inline">
+                    <% @yesorno.each_with_index do | yesorno, index | %>
+              	<label>
+              	 	<% if index == 0 %>
+				         <%= f.radio_button :tpclass, yesorno[1]  , :checked => true %> 
+				     <% else %>
+				     	<%= f.radio_button :tpclass, yesorno[1]  %> 
+				     <% end %>
+              		<%= yesorno[0] %>   
+              	</label>
+              	                  </div>
+              <% end %>
+			</td>
+              </tr>
+
+	                             <tr>
+                <td class="text-right tableleft">*教育程度</td>
+                <td>
+	                <%= f.select :education , @education, :class=>"form-control"%>
+                </td>
+              </tr>
+
+               <tr>
+                <td class="text-right tableleft">科系</td>
+                <td>
+                <%= f.text_field :majorin, :class => 'text', :class=>"form-control",:placeholder=>"輸入科系" %>
+                </td>
+              </tr>
+              
+              <tr>
+                <td class="text-right tableleft">最近的英語學習管道</td>
+                <td><%= f.select :learningtype , @learningtype, :class=>"form-control"%></td>
+              </tr>
+
+             <tr>
+                <td class="text-right tableleft">時間</td>
+                <td>
+                <%= f.text_field :period, :class => 'text', :class=>"form-control",:placeholder=>"輸入時間" %>
+                </td>
+              </tr>
+              
+              <tr>
+                <td class="text-right tableleft">機構名稱</td>
+                <td>
+                <%= f.text_field :institute, :class => 'text', :class=>"form-control",:placeholder=>"輸入機構名稱" %>
+                </td>
+              </tr>
+
+                        <tr>
+                <td class="text-right tableleft">是否有英語證照</td>
+                <td>
+                <% @certification.each_with_index do | certification, index | %> 
+                <div class="radio radio-inline">
+                <label>
+              	<% if index+1 == @certification.length %>
+				         <%= f.radio_button :certification, certification[1] , :class => 'radio' , :checked => true %> 
+				     <% else %>
+				     	<%= f.radio_button :certification, certification[1] , :class => 'radio' %> 
+				     <% end %>
+              		<%= certification[0] %>             
+              		<label></div>
+              <% end %>
+ 
+                  </td>
+              </tr>
+
+                 <tr>
+                <td class="text-right tableleft">分數或層級</td>
+                <td>
+                <%= f.text_field :level, :class => 'text', :class=>"form-control",:placeholder=>"輸入分數或層級" %>
+				</td>
+              </tr>
+
+            </tbody>
+          </table>
+  <div class="col-xs-8 col-xs-offset-2">     
+          <%= f.submit '送出', :class=> "btn btn-primary btn-lg btn-block btn-warning" %>
+            </div>
+
+     <% end %>
+      </div>
+    </div>
+  </div>
+    
+</div>
+
+</div>
+
+<!-- 聯絡資訊 -->
+
+<div class="wrapper7 hidden-xs">
+  <div class="text-center contactlogo"><img src="/images/contactlogo.jpg"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-xs-12 text-center">
+        <h2>英語情境中心</h2>
+        <p>地址：台北市萬華區中華路一段 160 號 2 樓之 5</p>
+        <p>電話：02-23616368</p>
+        <a href="https://www.google.com.tw/maps/place/108%E5%8F%B0%E5%8C%97%E5%B8%82%E8%90%AC%E8%8F%AF%E5%8D%80%E4%B8%AD%E8%8F%AF%E8%B7%AF%E4%B8%80%E6%AE%B5160%E8%99%9F/@25.041919,121.507798,17z/data=!3m1!4b1!4m2!3m1!1s0x3442a90984b8e99f:0xc394609415ca779b" target="_blenk"><img src="images/map1.jpg" border="0" class="img-responsive";></a> </div>
+      <div class="col-md-6 col-xs-12 text-center">
+        <h2>辦事處</h2>
+        <p>地址：台北市信義區信義路五段 8 號 14 樓</p>
+        <p>電話：0912582333</p>
+        <a href="https://www.google.com.tw/maps/place/110%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E7%BE%A9%E5%8D%80%E4%BF%A1%E7%BE%A9%E8%B7%AF%E4%BA%94%E6%AE%B58%E8%99%9F/@25.0327456,121.5612208,17z/data=!3m1!4b1!4m2!3m1!1s0x3442abb60ca8136b:0x8fb5fdd2a507b06f" target="_blenk"><img src="images/map1.jpg" border="0" class="img-responsive"></a> <br>
+        <small>電話諮詢時間：10：00 ~ 22：00（星期一～星期日）</small>
+        <p><a href="mailto:info@ebs-education.com">info@ebs-education.com</a></p>
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 手機版內容 -->
+
+<div class="m-wrapper1 visible-xs"> <a id="m-w1" class="anchor">&nbsp;</a>
+  <div class="container">
+    <h3>學生證言</h3>
+        	<%= render :partial => "reviews/slidepreview" %>
+    </div>
+</div>
+<div class="m-wrapper2 visible-xs"> <a id="m-w2" class="anchor">&nbsp;</a>
+  <div class="container">
+    <h2>ebs 讓你不再成為一塊磚</h2>
+    <p>「All in all it's just another brick in the wall，頂多，也只是牆上另一塊磚，」經典搖滾樂團 Pink Floyd 的歌詞，正好說明了坊間英語教育的困境，每個人都被教成同一個樣子！就像ebs創業夥伴，每一位都在年輕時認真學習英文，曾經靠英文獲得了工作、移民，但當我們需要更深入使用英文時，如與外國人社交、討論時事、談論更深的專業，想要活得更好時，我們都發現：英文說不出來，需要換一套方法學習。</p>
+    <p>所以我們創立 ebs 英語中心，設計從學習者出發的目的式英文教學法，先幫你找到「學習目的」，再「量身訂做」教學計劃，顛覆一般標準化、老師作主的英文課，以學生為核心，學你關心的事，學你人生或工作的目標，學你想要的英文，幫助你的英文一輩子都能進步。</p>
+  </div>
+</div>
+<div class="m-wrapper3 visible-xs"> <a id="m-w3" class="anchor">&nbsp;</a>
+  <div class="container">
+    <h2>ebs 目的式英語教學法<br>
+      <small>將志向、興趣、英文熔為一體</small></h2>
+  </div>
+  <h3>1. 目的式英語教學法，需求即教材</h3>
+  <div class="container">
+    <p>想把英文說得更好？這種空泛的學英文目的在 ebs 並不存在！進入 ebs，我們會以深度訪談的形式發掘「英文」能如何幫助你，接著設計專屬的教學計劃。</p>
+    <p>ebs 有豐富的生活與職場經驗，能幫助你定出類似以下的學習目的：在英文會議中強力陳述意見、在社交場合侃侃而談，或針對專業或興趣學習英文，如科技、外交、藝術、美食等。目的確認後，再挑選適合的老師與教材，ebs 目的式英語教學法，幫助你與英文密不可分，持續進步。</p>
+  </div>
+  <h3>2. 真人一對一教學，無可取代</h3>
+  <div class="container">
+    <p>面對面是最有威力的語言學習法，師生之間的互動直接，老師更容易帶領你模仿講出完整的句子，習慣英文思考，是對你最有利的學習方式。</p>
+  </div>
+  <h3>3. 兒童英語，大量口說，主題活潑</h3>
+  <div class="container">
+    <p>ebs 的孩子上課就像外國電影場景：外籍老師授課，活潑的課程內容，用英語融合數學、藝術、博物館探險…等主題，學生有大量口說機會，因此 ebs 的孩子喜歡講英語，讓英語成為自然使用的第二語言。</p>
+    <hr>
+  </div>
+  <div class="container">
+    <h2>ebs 價值<br>
+      <small>五星級英文課，顧問級的師資</small></h2>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="6%" valign="top">1.</td>
+        <td width="94%" valign="top">目的式英語課程，讓你做英文的主人</td>
+      </tr>
+      <tr>
+        <td valign="top">2.</td>
+        <td valign="top">量身訂做教學計劃，課程內容完全符合你的需要</td>
+      </tr>
+      <tr>
+        <td valign="top">3.</td>
+        <td valign="top">每堂課追蹤報告，教學品質高標準要求</td>
+      </tr>
+      <tr>
+        <td valign="top">4.</td>
+        <td valign="top">外籍師資均來自英語為母語的國家，通過專業教學認證</td>
+      </tr>
+      <tr>
+        <td valign="top">5.</td>
+        <td valign="top">顧問級師資，背景多元豐富，如管理、科技、娛樂、行銷等</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div class="m-wrapper4 visible-xs"> <a id="m-w4" class="anchor">&nbsp;</a>
+  <div class="container">
+    <h2>認識 ebs 目的式課程<br>
+      找到適合你的方案</h2>
+    <div class="case">
+      <div class="title"> <small>ebs 目的式課程 1</small>
+        <h3>一對一真人教學</h3>
+        <b>效果最好的行為模仿學習法，快速突破瓶頸</b> </div>
+      <hr>
+      <p>面對面是最有威力的語言學習法，師生大量互動，暢談你有興趣的主題，老師可直接調整你的錯誤，並帶領你完整模仿正確句型用法，規劃完善的課程進度，更讓你清楚看見自己的進步。</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="6%" valign="top">1.</td>
+          <td width="94%" valign="top">顧問級師資設計專屬教學計畫，100%符合學習需求</td>
+        </tr>
+        <tr>
+          <td valign="top">2.</td>
+          <td valign="top">自然習慣英文思考，擺脫中翻英模式</td>
+        </tr>
+        <tr>
+          <td valign="top">3.</td>
+          <td valign="top">每堂課都有進度報告表，清楚記錄自己的進步</td>
+        </tr>
+      </table>
+    </div>
+    <div class="case">
+      <div class="title"> <small>ebs 目的式課程 2</small>
+        <h3>ebs 不可能任務中心</h3>
+        <b>各路高手為你解決棘手英語任務，英文急訓</b> </div>
+      <hr>
+      <p>比如：如何在30天內提升大學教授英語能力，順利完成重要學術演講？<br>
+        比如：蠶豆症孩子即將出國遊學，父親如何與寄宿家庭溝通注意事項？</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="6%" valign="top">1.</td>
+          <td width="94%" valign="top">只學特殊場合需要的英語，不浪費時間在一般課程</td>
+        </tr>
+        <tr>
+          <td valign="top">2.</td>
+          <td valign="top">專家提供產業、文化等的必要建議，解析溝通眉角</td>
+        </tr>
+      </table>
+    </div>
+    <div class="case">
+      <div class="title"> <small>ebs 目的式課程 3</small>
+        <h3>企業訓練課程</h3>
+        <b>快速診斷員工英語弱點，針對性補強英語力</b> </div>
+      <hr>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="6%" valign="top">1.</td>
+          <td width="94%" valign="top">大量實境演練，課程內容可立即帶入職場應用</td>
+        </tr>
+        <tr>
+          <td valign="top">2.</td>
+          <td valign="top">針對產業屬性設計職場應對、簡報、email 書寫等課程</td>
+        </tr>
+      </table>
+    </div>
+    <div class="case">
+      <div class="title"> <small>ebs 目的式課程 4</small>
+        <h3>兒童英語課程</h3>
+        <b>讓孩子習慣英語，就像習慣國語，程度穩定提升</b> </div>
+      <hr>
+      <b>ebs 兒童英語課程項目</b>
+      <p>一對一教學、精緻小班、寒暑假營隊、課後輔導</p>
+      <b>ebs兒童英語課程特色</b>
+      <p>1. 大量口說，鼓勵發言，自然習慣英文思考<br>
+        2. 用英語學數學、藝術、博物館探險…教材活潑</p>
+    </div>
+  </div>
+</div>
+<div class="m-form visible-xs"> <a id="m-f" class="anchor">&nbsp;</a>
+  <div class="container">
+    <h3>與我聯絡<small>*為必填</small></h3>
+
+    
+    <%= render :partial => "contacts/form" %>
+    
+  </div>
+</div>
+<div class="m-link visible-xs">
+  <div class="container text-center"> <a href="http://www.ebs-education.com/index.php?lang=tw" target="_blank">ebs 舊站</a><br>
+    <a href="https://www.facebook.com/EBSEducationalConsultancy" target="_blank">臉書粉絲團</a><br>
+    <a href="https://www.youtube.com/channel/UCXWgHEBUoSz34gz_fHjCYnA/feed?filter=2" target="_blank">Youtube 專頁</a><br>
+    <a href="http://ebseducation.pixnet.net/blog" target="_blank">官方部落格</a> </div>
+</div>
+<div class="m-contact visible-xs">
+  <div class="container text-center">
+    <h3>英語情境中心</h3>
+    <p>台北市萬華區中華路一段 160 號 2 樓之 5</p>
+    <a href="https://www.google.com.tw/maps/place/108%E5%8F%B0%E5%8C%97%E5%B8%82%E8%90%AC%E8%8F%AF%E5%8D%80%E4%B8%AD%E8%8F%AF%E8%B7%AF%E4%B8%80%E6%AE%B5160%E8%99%9F/@25.041919,121.507798,17z/data=!3m1!4b1!4m2!3m1!1s0x3442a90984b8e99f:0xc394609415ca779b" target="_blank"><img src="images/map.png"></a><br>
+    <br>
+    <br>
+    <p><a href="tel:0223616368">02-23616368</a></p>
+    <a href="tel:0223616368"><img src="images/phone.png"></a>
+    <hr>
+    <h3>辦事處</h3>
+    <p>台北市信義區信義路五段 8 號 14 樓</p>
+    <a href="https://www.google.com.tw/maps/place/110%E5%8F%B0%E5%8C%97%E5%B8%82%E4%BF%A1%E7%BE%A9%E5%8D%80%E4%BF%A1%E7%BE%A9%E8%B7%AF%E4%BA%94%E6%AE%B58%E8%99%9F/@25.0327456,121.5612208,17z/data=!3m1!4b1!4m2!3m1!1s0x3442abb60ca8136b:0x8fb5fdd2a507b06f" target="_blank"><img src="images/map.png"></a><br>
+    <br>
+    <br>
+    <p><a href="tel:0912582333">0912582333</a></p>
+    <a href="tel:0912582333"><img src="images/phone.png"></a><br>
+    <br>
+    <span>電話諮詢時間：10：00 ~ 22：00<br>
+    （星期一～星期日）</span><br>
+    <br>
+    <p><a href="mailto:info@ebs-education.com"  target="_blank">info@ebs-education.com</a></p>
+    <hr>
+    <a id="switch">切換桌面版</a> </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/anchor-art.js"></script> 
+<script>
+$(document).ready(function(){
+	detectWidth();
+	
+	$('#switch').click(function(){
+		$('.visible-xs').remove()
+		$('body').css({width:768,padding:0});
+		$('.navbar').removeClass('navbar-fixed-top');
+		$('.hidden-xs').attr('style','display: block !important');
+	});
+	
+	$(window).resize(function(){
+		detectWidth();
+	});
+	
+	function detectWidth(){
+		if($(window).width() <= 768 && $('.visible-xs').length){
+			$('.hidden-xs').attr('style','display: none !important');
+		}
+		else{
+			$('.hidden-xs').attr('style','display: block !important');
+		}
+	}
+})
+</script>
