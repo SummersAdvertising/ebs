@@ -1,25 +1,48 @@
-<section class="list">
-  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-    <tr>
-	      <th align="left" class="x0 x1">置頂</th>
-          <th align="left" class="x0 x2">日期</th>
-          <th align="left">標題</th>
-          <th align="left">100字</th>
-    </tr>
-    
-    <% @review.each do |review| %>
-    <tr>
-		  <td class="x0"><%= image_tag("star.png") if review.ranking != 0 %></td>
-	      <td class="x0"><%= review.created_at.strftime('%Y-%m-%d') %></td>
-	      <td><%= link_to review.title, review_path(review) %></td>
-	      <td><p><%= review.article.get_meta.first(100) if review.article.get_meta.length > 0 %> <a href="<%= review_path( review ) %>">...more</a></p></td>
-    </tr>
-    <% end %>
-  </table>
-</section>
-<!--list-->
-<section class="page">
-<%= paginate @review, :window => 2 %>
-</section>
-<!--page-->
+<%= render :partial => "layouts/frontmenu" %>    
+
+    <div class="note_wrapper">
+    	<div class="container">
+
+    		<div class="col-md-10 col-md-offset-1 col-xs-12">
+    			<h1>ebs 學生證言 - 目錄</h1>
+    		</div>
+    		
+    		<div class="col-md-10 col-md-offset-1 col-xs-12 notepaper">
+    			    <% @review.each do |review| %>
+    			<!-- 1 -->
+    			<div class="notebox">
+    				
+    				<div class="notephoto hidden-xs">
+    					<div><%= image_tag(review.cover, :class=> "studentphoto1") %></div>
+    					<div class="sname"><%= review.name %></div>
+    				</div>
+    				
+    				<div class="notetxt">
+    					<div class="notetitle">
+    					<%= link_to review.title, review_path(review), class: "titlelink" %>
+    					</div>
+    					
+    					<p class="notelink">
+    					<% note = (review.article.get_meta.first(100) if review.article.get_meta.length > 0) %>
+    					<%= link_to  note,review_path(review), class: "txtlink" %>
+    					</p>
+    					<%= link_to "閱讀全文", review_path(review), class: "notemore" %>
+    				</div> <!-- end of notetxt -->
+    				
+    			</div><!-- end of notebox -->
+    			  <% end %>
+
+				<!--list-->
+
+				<%= paginate @review, :window => 5 ,:theme =>"default"%>
+
+	
+				<!--page-->
+				<div class="col-xs-12 text-center">
+					<a href="<%= root_url %>" class="homelink"><img src="/images/home1.jpg" width="62px" height="91px"></a>
+				</div>
+
+    		</div><!-- end of notepaper -->
+	</div><!-- end of container-->
+</div><!-- end of  note_wrapper-->
 

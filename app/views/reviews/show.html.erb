@@ -7,23 +7,42 @@
 
 <link rel="stylesheet" type="text/css" href="/css/imgareaselect-default.css" />
 
-<article _height="auto" id="news">
-  <section class="content">
-    <nav><a href="<%= root_url %>">首頁</a><span>></span><a>學生證言</a></nav>
-    <div class="inner">
-      <div class="right">
-        <header><span class="date"><%= @review.created_at.strftime('%Y年%m月%d日') %></span>
-          <h3><%= @review.title %></h3>
-        </header>        
-        <%= image_tag(@review.cover) %>
-        <article id="articleContent"></article>
-      </div>
+<%= render :partial => "layouts/frontmenu" %>    
+
+    <div class="note_wrapper">
+    	<div class="container">
+
+    		<div class="col-md-10 col-md-offset-1 col-xs-12">
+    			<h1>ebs 學生證言 - 目錄</h1>
+    		</div>
+    		<div class="col-md-10 col-md-offset-1 col-xs-12 notepaper">
+    			<!-- 1 -->
+    			<div class="notebox">
+    				<div class="notephoto hidden-xs">
+    					<div><%= image_tag(@review.cover, :class=> "studentphoto1") %></div>
+    					<div class="sname"><%= @review.name %></div>
+    				</div>
+    				<div class="notetxt">
+    					<div class="notetitle"><%= @review.title %></div>
+    				</div>
+    			</div>
+    			<div class="col-xs-12">
+						<p class="writings"  id="articleContent"/>
+	    		</div>
+	    		
+	    		<div class="col-xs-6 text-center">
+	    			<a href="<%= reviews_path %>" class="homelink"><img src="/images/back1.jpg" width="62px" height="91px"></a>
+	    		</div>
+	    		<div class="col-xs-6 text-center">
+	    		<a href="<%= root_url %>" class="homelink"><img src="/images/home1.jpg" width="62px" height="91px"></a>
+	    		</div>
+    		</div>
+
+    	</div>
     </div>
-  </section>
-</article>
-
-
+    
 <input id="article_content" style="display:none;" type="text" value="<%= @review.article.content %>">
+
 <script>
 	$(document).ready(function() {	
 		editor.output();	

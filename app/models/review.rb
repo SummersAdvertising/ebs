@@ -8,6 +8,6 @@ class Review < ActiveRecord::Base
 	
 	validates :ranking, :inclusion => 0..1
 	
-	paginates_per 25
+	paginates_per 5
 
 end

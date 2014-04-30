@@ -108,6 +108,7 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     remotipart (1.2.1)
+    rmagick (2.13.2)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -168,6 +169,7 @@ DEPENDENCIES
   rails (= 4.0.0)
   rails-alertify
   remotipart
+  rmagick (= 2.13.2)
   sass-rails (~> 4.0.0)
   sdoc
   sprockets-rails

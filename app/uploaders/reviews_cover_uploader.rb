@@ -14,7 +14,7 @@ class ReviewsCoverUploader < CarrierWave::Uploader::Base
   	
 	  	resize_and_pad(100, 100, "#05F250")
   	end
-  end
+   end
   # Choose what kind of storage to use for this uploader:
   storage :file
 
