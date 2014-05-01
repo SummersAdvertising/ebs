@@ -73,3 +73,7 @@ gem 'mini_magick'
 gem "remotipart"
 gem 'kaminari'
 gem 'rmagick' , '2.13.2'
+
+gem 'delayed_job'
+gem 'delayed_job_active_record'
+gem 'daemons'

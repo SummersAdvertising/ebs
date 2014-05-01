@@ -22,8 +22,9 @@ class ContactsController < ApplicationController
 			
 		    respond_to do |format|
 		      if @contact.save
-		      	
-		      	ContactMailer.new_contact( @contact ).deliver
+		      	#TicketMailer.delay.send_notice( @ticket )
+		      	#ContactMailer.new_contact( @contact ).deliver
+		      	ContactMailer.delay.new_contact( @contact )
 		      	
 		        format.html { redirect_to root_url, notice: '感謝您的聯絡，請等候服務專員聯絡！' }
 		        format.json { render action: 'show', status: :created, location: @contact }
