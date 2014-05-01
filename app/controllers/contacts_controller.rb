@@ -31,13 +31,9 @@ class ContactsController < ApplicationController
 		      else
 
 		        flash[ :warning ] = @contact.errors.messages.values.flatten.join('<br />')
-		        format.html { render template: 'static_pages/index' }
+		        format.html { render template: 'static_pages/index'}
 		        format.json { render json: @contact.errors, status: :unprocessable_entity }
         
-		      	#flash[ :warning ] = @contact.errors.messages.values.flatten.join('<br />')
-
-		        #format.html { render action: 'new' }
-		        #format.json { render json: @contact.errors, status: :unprocessable_entity }
 		      end
 		    end
 	end
