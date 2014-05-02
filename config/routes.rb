@@ -46,7 +46,7 @@ Ebs::Application.routes.draw do
   end
   
   root :to => 'static_pages#index'
-  #root :to => 'static_pages#temp'
+  #root :to => 'static_pages#construct'
   
   get '(*url)'	 => 'errors#index'
   

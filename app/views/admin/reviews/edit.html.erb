@@ -81,10 +81,9 @@
     <%= render :partial => 'admin/peditor/editor' %>
   <section class="button"> <a href="javascript: document.getElementsByTagName('form')[0].submit();"><img src="<%= image_path("save.png") %>">儲存</a> <a href="<%= admin_review_path(@review) %>"><img src="<%= image_path("cancel.png") %>">取消</a> </section>
   
-   <%= params %>
 	<%= fields_for @review.article do | a | %>
 	
-		<%= a.text_field :content, {:id => 'review_content', :size => "100"} %>
+		<%= a.hidden_field :content, {:id => 'review_content', :size => "100"} %>
 	
 	<% end %>
 

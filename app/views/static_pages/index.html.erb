@@ -292,9 +292,9 @@
               <tr>
                 <td class="text-right tableleft">*資料填寫人</td>
                 <td>
-                <div class="radio radio-inline">
                  <% @isparent.each_with_index do | isparent , index| %>
-              	<label>
+                 <div class="radio radio-inline">
+	                 <label>
 			         <% if index == 0 %>
 				         <%= f.radio_button :isparent, isparent[1] ,  :checked => true %> 
 				     <% else %>
@@ -377,9 +377,9 @@
                   <tr>
                 <td class="text-right tableleft">*你是否願意到台北上課</td>
                 <td>
-                <div class="radio radio-inline">
-                    <% @yesorno.each_with_index do | yesorno, index | %>
-              	<label>
+                <% @yesorno.each_with_index do | yesorno, index | %>
+                    <div class="radio radio-inline">
+		              	<label>
               	 	<% if index == 0 %>
 				         <%= f.radio_button :tpclass, yesorno[1]  , :checked => true %> 
 				     <% else %>

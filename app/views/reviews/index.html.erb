@@ -62,9 +62,9 @@
     					    					
     					<p class="notelink">
     					<% note = (review.article.get_meta.first(100) if review.article.get_meta.length > 0) %>
-    					<%= link_to  note,testimonials_path(review), class: "txtlink" %>
+    					<%= link_to  note,testimonial_path(review), class: "txtlink" %>
     					</p>
-    					<%= link_to "閱讀全文", testimonials_path(review), class: "notemore" %>
+    					<%= link_to "閱讀全文", testimonial_path(review), class: "notemore" %>
     				</div> <!-- end of notetxt -->
     				
     			</div><!-- end of notebox -->

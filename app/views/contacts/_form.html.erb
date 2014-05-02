@@ -161,7 +161,8 @@
               <!--<td><%# f.select :certification , @certification%></td> -->
             </tr>
 
-            <tr id="level" style="display:none;">
+            <!-- <tr id="level" style="display:none;"> -->
+            <tr id="level">
               <th valign="top">分數或層級</th>
 	            <td><%= f.text_field :level, :class => 'text', :class=>"form-control" %></td>
             </tr>
@@ -169,87 +170,6 @@
     <div class="text-center">
      <%= f.submit '送出', :class=> "btn btn-primary btn-lg" %>
     </div>
-
-   
-   
-                       	
-			
-                     
-       		   
-                      
-             <!--
-             <tr>
-              <th><%= f.label :certificationdetail, '證照自填' %></th>
-              <td><%= f.text_field :certificationdetail, :class => 'text' %></td>
-            </tr>
--->
-             <!--
-
-             <tr>
-              <th><%= f.label :score, '分數' %></th>
-              <td><%= f.text_field :score, :class => 'text' %></td>
-            </tr>
-            
--->
-
 <% end %>
-<script>
-	$(document).ready(function(){
-		//education	
-		$("#contact_education").change(function()
-		{		
-			//var a = $("#contact_education option").toArray();
-			var a = ["國中","國小",	"幼稚園"]
-			//alert( $(this).val()+"-"+$.inArray($(this).val(), a ));
-			if ( $.inArray($(this).val(), a ) == -1 )
-			{	
-					$("#majorin").show();
-					$("#contect_majorin").focus();
-			}
-			else
-			{
-					$("#majorin").hide("slow");					
-			}
-		});
-		//type	
-		
-$("#contact_learningtype").change(function()
-		{		
-			//var a = $("#contact_education option").toArray();
-			var a = ["自學",	"個人家教"]
-			
-			if ( $.inArray($(this).val(), a ) == -1)
-			{
-				//if (!$("#period").is(":visible") || !$("#institute").is(":visible"))
-				//{
-					$("#period").show();
-					$("#contact_period").focus();
-					$("#institute").show(500);	
-				//}		
-			}
-			else
-			{
-					$("#period").hide("slow");
-					$("#institute").hide("slow");
-			}		
-		});
-		//certification:radio button, change slightly
-		$("#certification input[name^=contact]:radio").change(function()
-		{		
-			//var a = $("#contact_education option").toArray();
-			var a = ["其他",""]
-			
-			if ( $.inArray($(this).val(), a ) == -1)
-			{
-					$("#level").show();
-					$("#contact_level").focus();		
-			}
-			else
-			{
-					$("#level").hide("slow");
-			}		
-		});	
-	});
- </script>
 
  
