@@ -100,10 +100,11 @@
 <script type="text/javascript">
 
 	var hold = false;
-	
+
 $(document).ready(function(){
 
 	var originalClose = $.colorbox.close;
+	
 	$.colorbox.close = function(){
 		if (hold) {			
 		  if ( confirm( '確定放棄圖片裁切？這將會刪除您的圖片。' )) {

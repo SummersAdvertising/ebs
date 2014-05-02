@@ -5,12 +5,8 @@ var resize_data = {"x1":defaultX1,"y1":defaultY1,"x2":defaultX2,"y2":defaultY2,"
 
 cover_preview = $("#cover_preview");
 cover_preview.children().remove();
-//cover_preview.append('<img data-id="<%= @review.id.to_s.html_safe %>" src="<%= @review.cover.to_s.html_safe %>" />');
 
 cover_preview.append('<%= image_tag(@review.cover) %>');
-//cover_preview.html('<%= image_tag(@review.cover) %>');
-
-
 
 var btn = $('<button>完成截圖</button>').click(function(event){
 	event.preventDefault();
@@ -27,8 +23,7 @@ var btn = $('<button>完成截圖</button>').click(function(event){
 });
 		cover_preview.append('<br />').append(btn);
 
-//color box
-
+		//color box
 		var showResizeArea = function() {
 		
 			
@@ -51,8 +46,14 @@ var btn = $('<button>完成截圖</button>').click(function(event){
 					});
 			 		
 			 	},
+			 	onClosed:function(){
+					location.reload(true);
+			 	},
 			 	inline: true, 
-			 	href: '#cover_preview'});	
+			 	href: '#cover_preview',
+			 	overlayClose:false,
+			 	escKey:false
+			 	});	
 		}
 		
 		// delay for image load
