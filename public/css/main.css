@@ -1,4 +1,4 @@
-body {
+﻿body {
 	padding: 63px 0 0 0;
   font-family: "微軟正黑體", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.8em;
@@ -675,3 +675,8 @@ color:#fff;}
 .m-contact span{font-size:.9em;line-height:1.5em}
 #switch{font-size:.8em;border-bottom:1px solid #eee}
 #switch:hover{text-decoration:none}
+
+#articleContent p{margin:50px 0}
+#articleContent img{max-width:100%;height:auto}
+.m-wrapper1 p span,.wrapper1 p span{color:#aaa}
+.notetitle a span,.notetitle > span,.sname{color:#aaa;font-size:16px}
