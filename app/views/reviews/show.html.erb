@@ -84,3 +84,21 @@
 		editor.output();	
 	});
 </script>
+<script>
+$(document).ready(function(){
+ detectWidth(); 
+ $(window).resize(function(){
+  detectWidth();
+ }); 
+ function detectWidth(){
+  if($(window).width() <= 768 && $('.visible-xs').length){
+   $('.visible-xs').attr('style','display: block !important');
+   $('.hidden-xs').attr('style','display: none !important');
+  }
+  else{
+   $('.hidden-xs').attr('style','display: block !important');
+   $('.visible-xs').attr('style','display: none !important');
+  }
+ }
+})
+</script>
