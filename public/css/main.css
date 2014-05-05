@@ -122,11 +122,11 @@ h1,h2,h3,h4,h5,h6, p{
 .wrapper1 .studentbox{width: 33%;float:left}
 .studentbox th{width:100px}
 
-.studentbox p{font-size: 0.9em;	line-height: 1.5em;height:72px;padding:0 15px 0 0}
+.studentbox p{font-size: 0.9em;	line-height: 1.5em;height:65px;padding:0 15px 0 0}
 .studentbox p a{color:#000;font-size:1em}
 .studentbox span{font-size: 0.8em;color: #464646;}
 .studentbox td > a{font-size: 0.8em;color:#00879c;display:inline-block;padding:0 0 0 24px;
-	background:url(../images/smore.gif) 0 10px no-repeat;float:right;margin:0 15px 0 0}
+	background:url(../images/smore.gif) 0 10px no-repeat;float:right;margin:0 25px 0 0}
 .studentbox td > a:hover{background:url(../images/smore2.gif) 0 10px no-repeat}
 .studentbox img{border:5px solid #ececec;width:72px;height:72px}
 
@@ -527,10 +527,8 @@ table{
 	color: #522e92;
 }
 
-.notetxt{float:left}
-.notetxt p{
-	margin-left: 100px;	
-}
+.notetxt{float:left;width:80%}
+
 @media screen and (max-width: 768px) {
 	.notetitle{
 		margin-left: 0px;
@@ -538,10 +536,12 @@ table{
 	.notetxt p{
 		margin-left: 0px;	
 	}
+  .notetxt{float:none;width:100%}
 }
 .notephoto{
 	width: 82px;
-	float:left
+	float:left;
+
 }
 .notemore{
 	color: #c0c0c0;
