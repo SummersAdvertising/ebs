@@ -45,10 +45,6 @@ h1,h2,h3,h4,h5,h6, p{
 	}
 }
 
-#articleContent p{margin:50px 0}
-#articleContent img{max-width:100%;height:auto}
-.m-wrapper1 p span,.wrapper1 p span{color:#aaa}
-.notetitle a span,.notetitle > span{color:#aaa;font-size:16px}
 
 /*  主視覺  */
 
@@ -132,37 +128,7 @@ h1,h2,h3,h4,h5,h6, p{
 .studentbox td > a{font-size: 0.8em;color:#00879c;display:inline-block;padding:0 0 0 24px;
 	background:url(../images/smore.gif) 0 10px no-repeat;float:right;margin:0 15px 0 0}
 .studentbox td > a:hover{background:url(../images/smore2.gif) 0 10px no-repeat}
-.studentbox img{border:5px solid #ececec}
-/*
-.studentphoto1{
-	padding: 5px;
-	background-color: #ececec;
-	margin: 0 15px 0 0;
-	float: left;
-}
-
-.studenttitle{
-	font-size: 0.9em;
-	line-height: 1.5em;
-}
-
-.sname{
-	font-size: 0.8em;
-	color: #464646;
-	clear:both;
-	float: left;
-}
-
-.smore{
-	font-size: 0.8em;
-	color: #c0c0c0;
-	padding-left: 24px;
-	background-image: url("../images/smore.gif");
-	background-repeat: no-repeat;
-	background-position: 0px 10px;
-	float: right;
-}
-*/
+.studentbox img{border:5px solid #ececec;width:72px;height:72px}
 
  a:hover .smore {
 	color: #00879c;
@@ -505,7 +471,8 @@ table{
     color: #a196ba;
 }
 
-.wrapper7 a img{margin:0 auto} 
+.wrapper7 a img{margin:0 auto}
+
 
 /*  文章列表  */
 
@@ -551,15 +518,16 @@ table{
 	background-image: url("../images/line2.gif");
 	background-repeat: no-repeat;
 	background-position: 0% 100%;
-	overflow: auto;
+	overflow:hidden
 }
 
 .notetitle{
-	margin-left: 100px;
 	font-size: 1.5em;
 	margin-bottom: 15px;
 	color: #522e92;
 }
+
+.notetxt{float:left}
 .notetxt p{
 	margin-left: 100px;	
 }
@@ -573,8 +541,7 @@ table{
 }
 .notephoto{
 	width: 82px;
-	height: 120px;
-	float: left;
+	float:left
 }
 .notemore{
 	color: #c0c0c0;
@@ -676,7 +643,11 @@ color:#fff;}
 #switch{font-size:.8em;border-bottom:1px solid #eee}
 #switch:hover{text-decoration:none}
 
+/*  一堆修正  */
+
 #articleContent p{margin:50px 0}
 #articleContent img{max-width:100%;height:auto}
 .m-wrapper1 p span,.wrapper1 p span{color:#aaa}
-.notetitle a span,.notetitle > span,.sname{color:#aaa;font-size:16px}
+.notetitle a span,.notetitle > span,.sname{color:#aaa;font-size:16px;}
+.sname{font-size:13px;line-height:1.3em;padding:5px 0}
+.studentphoto1{width:72px;height:72px;border:5px solid #ececec}
