@@ -7,13 +7,13 @@ class ReviewsCoverUploader < CarrierWave::Uploader::Base
   process :resize_if_needed
 
    def resize_if_needed
-#   	img = Magick::Image.read(self.file.path)
-#   	@width = img[0].columns
-#   	@height = img[0].rows
-#   	if (@width.to_i < 100 or @height.to_i < 100)
-#   	
+  	img = Magick::Image.read(self.file.path)
+  	@width = img[0].columns
+  	@height = img[0].rows
+  	if (@width.to_i < 100 or @height.to_i < 100)
+  	
  	  	resize_and_pad(500, 500)
-#   	end
+  	end
     end
   # Choose what kind of storage to use for this uploader:
   storage :file
