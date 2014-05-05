@@ -35,10 +35,10 @@ var btn = $('<button>完成截圖</button>').click(function(event){
 					cover_preview.find("img").imgAreaSelect({
 					//$('#colorbox').find('img').imgAreaSelect({
 					persistent: true,
-					handles: false,
+					handles: true,
 					x1: defaultX1, y1: defaultY1, x2: defaultX2, y2: defaultY2,
-					//aspectRatio: '1.57895:1',
-					resizable: false, 
+					aspectRatio: '1:1',
+					resizable: true, 
 					onSelectEnd: function(img, selection) {
 							resize_data = selection;
 							//alert(JSON.stringify(resize_data));
