@@ -107,26 +107,26 @@ h1,h2,h3,h4,h5,h6, p{
 	}
 
 
+
 /*  桌面版學員見證  */
 .wrapper1{
 	width: 100%;
 	padding: 40px 0 40px 0;
 	background-color: #f6f6f6;
-	border-bottom: solid 1px;
-	border-bottom-color:#e1e1e1;
+	border-bottom:1px solid #e1e1e1;
 	z-index: 6;
 	overflow:hidden;
 	position:relative
 }
 
 .wrapper1 .studentbox{width: 33%;float:left}
-.studentbox th{width:100px}
+.studentbox th{width:100px;line-height:15px}
 
-.studentbox p{font-size: 0.9em;	line-height: 1.5em;height:65px;padding:0 15px 0 0}
+.studentbox p{font-size: 0.9em;	padding:0 15px 0 0;line-height:25px;min-height:95px}
 .studentbox p a{color:#000;font-size:1em}
-.studentbox span{font-size: 0.8em;color: #464646;}
+.studentbox span{font-size: 0.8em;color: #aaa;}
 .studentbox td > a{font-size: 0.8em;color:#00879c;display:inline-block;padding:0 0 0 24px;
-	background:url(../images/smore.gif) 0 10px no-repeat;float:right;margin:0 25px 0 0}
+	background:url(../images/smore.gif) 0 10px no-repeat;float:right;margin:0 18px 0 0}
 .studentbox td > a:hover{background:url(../images/smore2.gif) 0 10px no-repeat}
 .studentbox img{border:5px solid #ececec;width:72px;height:72px}
 
@@ -134,6 +134,7 @@ h1,h2,h3,h4,h5,h6, p{
 	color: #00879c;
 	background-image: url("../images/smore2.gif");
 }
+
 
 /*  桌面版前言  */
 .intro{position:relative}
