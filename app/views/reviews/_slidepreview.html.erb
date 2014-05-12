@@ -9,7 +9,12 @@
           <p>
          	 <%= link_to  testimonial_path(review)  do %>
          	 	<span><%= review.course%></span><br>
-         	 	<%= review.title %>
+         	 	<% if (review.title.length > 30) %>
+					<% note = review.title.first(30)  %>
+					<%= note+"..." %>
+				<% else %>
+         	 		<%= review.title %>
+         	 	<% end %>
      	 	<% end %>
            </p>
             <a href="<%=  testimonial_path(review) %>">閱讀全文</a>
