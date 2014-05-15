@@ -291,7 +291,7 @@ mstag.loadTag("analytics", {dedup:"3",domainId:"2675111",type:"1",actionid:"2409
 </script>
 <noscript><iframe src="//flex.msn.com/mstag/tag/162520c6-943b-4c43-9c99-b1d2cdb131f6/analytics.html?dedup=3&domainId=2675111&type=1&actionid=240966" frameborder="0" scrolling="no" width="1" height="1" style="visibility:hidden;display:none"></iframe></noscript>
 <!-- ad -->
-
+<!-- ------------------------------------- -->
 <div class="wrapper8 hidden-xs">
 <a id="w6" class="anchor">&nbsp;</a>
 <div class="container hidden-xs">
@@ -305,31 +305,10 @@ mstag.loadTag("analytics", {dedup:"3",domainId:"2675111",type:"1",actionid:"2409
           <table class="table">
             <tbody>
               <tr>
-                <td class="text-right tableleft">*資料填寫人</td>
-                <td>
-                 <% @isparent.each_with_index do | isparent , index| %>
-                 <div class="radio radio-inline">
-	                 <label>
-			         <% if index == 0 %>
-				         <%= f.radio_button :isparent, isparent[1] ,  :checked => true %> 
-				     <% else %>
-				     	<%= f.radio_button :isparent, isparent[1]  %> 
-				     <% end %>
-              		<%= isparent[0] %>              		
-              	</label></div>
-              <% end %>
-                  </td>
-              </tr>
-              
-                 <tr>
                 <td class="text-right tableleft">*姓名</td>
                 <td><%= f.text_field :name, :class => 'form-control' , :required => true,:placeholder=>"輸入姓名"%>
               </tr>
-              <tr>
-                <td class="text-right tableleft">*出生年</td>
-                <td><%= f.date_select :birthday,{ :start_year => Date.current.year, :end_year => Date.current.year-100,discard_day: true,discard_month: true}, {:class=> 'form-control'} %></td>
-              </tr>
-
+              
               <tr>
                 <td class="text-right tableleft">*連絡電話</td>
                 <td><%= f.text_field :phone, :class => 'form-control', :placeholder=>"輸入電話"%>
@@ -340,6 +319,10 @@ mstag.loadTag("analytics", {dedup:"3",domainId:"2675111",type:"1",actionid:"2409
                 <td><%= f.text_field :email, :class => 'form-control' ,:required => true, :placeholder=>"輸入email"%>
               </tr>
             
+              <tr>
+                <td class="text-right tableleft">地址</td>
+                <td><%= f.text_field :address, :class => 'form-control' , :placeholder=>"輸入地址"%>
+              </tr>
             
               <tr>
                 <td class="text-right tableleft">*學英文的目的</td>
@@ -354,117 +337,21 @@ mstag.loadTag("analytics", {dedup:"3",domainId:"2675111",type:"1",actionid:"2409
               </tr>
 
               <tr>
-                <td class="text-right tableleft">*你最想加強英文</td>
+                <td class="text-right tableleft">*課程諮詢</td>
                 <td>
-	                <% @weekness.each do | weekness | %>
+	                <% @consultcourse.each do | consultcourse | %>
 	                <label class="checkbox-inline">
-		                <%= f.check_box :weekness, { :multiple => true, :name => "contact[weekness][]" }, weekness[0], nil %> 
-		                <%= weekness[1] %>
+		                <%= f.check_box :consultcourse, { :multiple => true, :name => "contact[consultcourse][]" }, consultcourse[0], nil %> 
+		                <%= consultcourse[1] %>
 		                </label>
 		                <% end %>
                  </td>
               </tr>
 	  
-	  
-	    <tr>
-                <td class="text-right tableleft">*目前學英文的瓶頸是？</td>
-                <td>
-                <% @bottleneck.each do | bottleneck | %>
-					<label class="checkbox-inline">
-	              	<%= f.check_box :bottleneck, { :multiple => true, :name => "contact[bottleneck][]" }, bottleneck[0], nil %> 
-	              		<%= bottleneck[1] %>
-	              	</label>
-	              <% end %>
-	                  </td>
-              </tr>
-
-	      <tr>
-                <td class="text-right tableleft">*方便連絡的時間？</td>
-                <td>
-                 <% @availabletime.each do | availabletime | %>
-                 <label class="checkbox-inline">
-	              	<%= f.check_box :availabletime, { :multiple => true, :name => "contact[availabletime][]" }, availabletime[0], nil %> 
-	              		<%= availabletime[1] %>
-	              	</label>
-	              <% end %>
-                    </td>
-              </tr>
-                  <tr>
-                <td class="text-right tableleft">*你是否願意到台北上課</td>
-                <td>
-                <% @yesorno.each_with_index do | yesorno, index | %>
-                    <div class="radio radio-inline">
-		              	<label>
-              	 	<% if index == 0 %>
-				         <%= f.radio_button :tpclass, yesorno[1]  , :checked => true %> 
-				     <% else %>
-				     	<%= f.radio_button :tpclass, yesorno[1]  %> 
-				     <% end %>
-              		<%= yesorno[0] %>   
-              	</label>
-              	                  </div>
-              <% end %>
-			</td>
-              </tr>
-
-	                             <tr>
-                <td class="text-right tableleft">*教育程度</td>
-                <td>
-	                <%= f.select :education , @education,{}, {:class=>"form-control"}%>
-                </td>
-              </tr>
-
-               <tr>
-                <td class="text-right tableleft">科系</td>
-                <td>
-                <%= f.text_field :majorin, :class => 'text', :class=>"form-control",:placeholder=>"輸入科系" %>
-                </td>
-              </tr>
-              
               <tr>
-                <td class="text-right tableleft">最近的英語學習管道</td>
-                <td><%= f.select :learningtype , @learningtype,{}, {:class=>"form-control"}%></td>
+                <td class="text-right tableleft">留言</td>
+                <td><%= f.text_area :purposedetail, :class => 'form-control' %></td>
               </tr>
-
-             <tr>
-                <td class="text-right tableleft">時間</td>
-                <td>
-                <%= f.text_field :period, :class => 'text', :class=>"form-control",:placeholder=>"輸入時間" %>
-                </td>
-              </tr>
-              
-              <tr>
-                <td class="text-right tableleft">機構名稱</td>
-                <td>
-                <%= f.text_field :institute, :class => 'text', :class=>"form-control",:placeholder=>"輸入機構名稱" %>
-                </td>
-              </tr>
-
-                        <tr>
-                <td class="text-right tableleft">是否有英語證照</td>
-                <td>
-                <% @certification.each_with_index do | certification, index | %> 
-                <div class="radio radio-inline">
-                <label>
-              	<% if index+1 == @certification.length %>
-				         <%= f.radio_button :certification, certification[1] , :class => 'radio' , :checked => true %> 
-				     <% else %>
-				     	<%= f.radio_button :certification, certification[1] , :class => 'radio' %> 
-				     <% end %>
-              		<%= certification[0] %>             
-              		<label></div>
-              <% end %>
- 
-                  </td>
-              </tr>
-
-                 <tr>
-                <td class="text-right tableleft">分數或層級</td>
-                <td>
-                <%= f.text_field :level, :class => 'text', :class=>"form-control",:placeholder=>"輸入分數或層級" %>
-				</td>
-              </tr>
-
             </tbody>
           </table>
   <div class="col-xs-8 col-xs-offset-2">     
@@ -479,7 +366,7 @@ mstag.loadTag("analytics", {dedup:"3",domainId:"2675111",type:"1",actionid:"2409
 </div>
 
 </div>
-
+<!-- ------------------------------------- -->
 <!-- 聯絡資訊 -->
 
 <div class="wrapper7 hidden-xs">

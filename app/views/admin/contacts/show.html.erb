@@ -5,6 +5,7 @@
     <section class="text text-show">
       <div class="one">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <% if @contact.isparent.present? %>
           <tr>
             <th>填寫人：</th>
             <% if @contact.isparent.present? %>
@@ -13,25 +14,49 @@
             <td>本人</td>
             <% end %>
           </tr>
+          <% end %>
+          
           <tr>
             <th>姓名：</th>
             <td><%= @contact.name %></td>
           </tr>
+        <% if @contact.birthday.present? %>
           <tr>
             <th>出生年：</th>
             <td><%= @contact.birthday.year %></td>
           </tr>
+        <% end %>
+        
           <tr>
             <th>連絡電話：</th>
             <td><%= @contact.phone %></td>
           </tr>
           <tr>
-            <th>Email:：</th>
+            <th>Email：</th>
             <td><%= @contact.email %></td>
           </tr>
+          	     <% if !@contact.education.present? %>
+          <tr>
+          	<th>課程諮詢：</th>
+          	<td><%= @contact.consultcourse.join(",") %></td>
+          </tr>
+
+         <tr>
+          <th>地址：</th>
+            <td>
+            <% if !@contact.address.blank? %>
+            		<%= @contact.address %>
+        		<% else %>
+        			(未填寫)
+    			<% end %>
+			</td>
+          </tr>
+          <% end %>
         </table>
       </div>
     </section>   
+    
+    <% if @contact.education.present? %>
     <section class="hgroup">
       <h2>程度評估</h2>
     </section>
@@ -79,8 +104,14 @@
         </table>
       </div>
     </section>  
+    <% end %>
+    <% if @contact.purpose.present? %>
     <section class="hgroup">
-      <h2>學習心態與矯正評估</h2>
+    	<% if @contact.weekness.present? %>
+    	<h2>學習心態與矯正評估</h2>
+    	<% else %>
+    	<h2>學習目的</h2>
+    	<% end %>
     </section>
     <!--hgroup-->
      <section class="text text-show">
@@ -90,6 +121,21 @@
             <th>學習目的：</th>
             <td><%= @contact.purpose.join(",") %></td>
           </tr>
+           
+           <% if !@contact.weekness.present? %>
+         <tr>
+          <th>留言：</th>
+            <td>
+            <% if !@contact.purposedetail.blank? %>
+            		<%= simple_format(@contact.purposedetail) %>
+        		<% else %>
+        			(未填寫)
+    			<% end %>
+			</td>
+          </tr>
+          <% end %>
+          
+              <% if @contact.weekness.present? %>
           <tr>
             <th>加強英文：</th>
             <td><%= @contact.weekness.join(",") %></td>
@@ -98,9 +144,13 @@
             <th>遇到瓶頸：</th>
             <td><%= @contact.bottleneck.join(",") %></td>
           </tr>
+              <% end %>
+              
         </table>
       </div>
     </section>  
+    <% end %>
+    <% if @contact.availabletime.present? %>
     <section class="hgroup">
       <h2>聯絡評估</h2>
     </section>
@@ -123,6 +173,7 @@
         </table>
       </div>
     </section>
+    <% end %>
     <!--text-->   
     <section class="button"> <a href="<%= admin_contacts_path %>"><img src="/images/back.png">返回</a> </section>
     <!--button-->

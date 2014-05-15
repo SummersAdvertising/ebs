@@ -45,6 +45,10 @@
 	  alertify['error']("<%= flash[:warning].html_safe %>", 3000); 
 	  <% end %>
 
+  	  <% if !flash[:alert].nil? %>
+	  alertify['alert']("<%= flash[:alert].html_safe %>"); 
+	  <% end %>
+	  
 		$('a').click(function() {
 			if( window.location.toString().match(/page=\d+/) ) { 
 				document.cookie = ( 'last_page_num=' + window.location.toString().match(/page=\d+/)[0].split('=')[1] + ';' );
