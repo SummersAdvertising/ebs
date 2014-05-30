@@ -5,7 +5,7 @@ class TicketMailer < ActionMailer::Base
   def sendTicket(contact)
       		@contact = contact
   		if !Admin.where(isnotify: true).pluck( :email ).empty?
-  			Admin.where(isnotify: true).select(:email).each do | email | 
+  			Admin.where(isnotify: true).pluck(:email).each do | email | 
 				mail( :to => email , :subject => '收到了新的詢問！' ) 
   			end
 	  	else
