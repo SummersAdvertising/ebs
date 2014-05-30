@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+		<title>Ebs 新詢問</title>
+</head>
+<body>	
+		
+		<p>詢問內容及資料</p>
+		<p>姓名：<%= @contact.name %></p>
+		<p>連絡電話：<%= @contact.phone %></p>		
+		<p>Email：<%= @contact.email %></p>		
+		<p>學習目的：<%= @contact.purpose.join(",") %></p>		
+		<p>課程諮詢：<%= @contact.consultcourse.join(",") %></p>
+		<p>地址：<% if !@contact.address.blank? %>
+            				<%= @contact.address %>
+            			  <% else %>
+            				(未填寫)
+            			<% end %>
+        </p>
+		<p>留言：<% if !@contact.purposedetail.blank? %>
+            				<%= simple_format(@contact.purposedetail) %>
+		        		  <% else %>
+		        		  (未填寫)
+		        		  <% end %>
+    	</p>
+  </body>
+</html>
