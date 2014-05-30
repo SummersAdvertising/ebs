@@ -5,9 +5,10 @@ class TicketMailer < ActionMailer::Base
   def sendTicket(contact)
       		@contact = contact
   		if !Admin.where(isnotify: true).pluck( :email ).empty?
-  			Admin.where(isnotify: true).pluck(:email).each do | email | 
-				mail( :to => email , :subject => '收到了新的詢問！' ) 
-  			end
+  			mail( :to => Admin.where(isnotify: true).pluck( :email ), :subject => '[EBS]收到了新的詢問！', :template_path => 'ticket_mailer', :template_name => 'sendTicket' ) 
+  			# Admin.where(isnotify: true).pluck(:email).each do | email | 
+# 				mail( :to => email , :subject => '收到了新的詢問！' ) 
+#   			end
 	  	else
 	  		#if there is no one has been set  isnotify = true
 # 			mail( :to => Admin.pluck( :email ), :subject => '收到了新的詢問！' ) do | format |
