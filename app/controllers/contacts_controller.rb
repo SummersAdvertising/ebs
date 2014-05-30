@@ -24,8 +24,8 @@ class ContactsController < ApplicationController
 		      if @contact.save
 		      	#TicketMailer.delay.send_notice( @ticket )
 		      	#ContactMailer.new_contact( @contact ).deliver
-		      	ContactMailer.delay.notifytemplate( @contact )
-		      	
+		      	#ContactMailer.delay.new_contact( @contact )
+		      	ContactMailer.new_contact( @contact )
 		        #format.html { redirect_to root_url, notice: '感謝您的聯絡，請等候服務專員聯絡！' }
 		        format.html { redirect_to root_url, alert: '感謝您對EBS英語中心感興趣，我們會儘快與您連絡。' }
 		        format.json { render action: 'show', status: :created, location: @contact }
