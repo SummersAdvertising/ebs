@@ -47,6 +47,7 @@ Ebs::Application.routes.draw do
   
   root :to => 'static_pages#index'
   #root :to => 'static_pages#construct'
+  resources :conversions, :only => [:index]
   
   get '(*url)'	 => 'errors#index'
   

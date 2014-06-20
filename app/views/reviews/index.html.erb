@@ -43,32 +43,29 @@
     		</div>
     		
     		<div class="col-md-10 col-md-offset-1 col-xs-12 notepaper">
-    			    <% @review.each do |review| %>
-    			<!-- 1 -->
-    			<div class="notebox">
-    								
-    				<div class="notephoto hidden-xs">
-    					<div><%= image_tag(review.cover, :class=> "studentphoto1") %></div>
-    					<div class="sname"><%= review.name %></div>
-    				</div>
-    				
-    				<div class="notetxt">
-    					<div class="notetitle">
-				         	 <%= link_to  testimonial_path(review) , class: "titlelink"  do %>
-				         	 	<span><%= review.course%></span><br>
-				         	 	<%= review.title %>
-				     	 	<% end %>
-     					</div>
-    					    					
-    					<p class="notelink">
-    					<% note = (review.article.get_meta.first(60) if review.article.get_meta.length > 0) %>
-    					<%= link_to  note+" ......",testimonial_path(review), class: "txtlink" %>
-    					</p>
-    					<%= link_to "閱讀全文", testimonial_path(review), class: "notemore" %>
-    				</div> <!-- end of notetxt -->
-    				
-    			</div><!-- end of notebox -->
-    			  <% end %>
+		    <% @review.each do |review| %>
+    			 	<!-- 1 -->
+    			 <div class="notebox">
+							<div class="notephoto hidden-xs">
+							<div class="kk"><%= image_tag(review.cover, :class=> "studentphoto1") %></div>
+							</div>
+					
+							<div class="notetxt">
+								<div class="notetitle">
+										<%= link_to  testimonial_path(review) , class: "titlelink"  do %>
+												<span><%= review.name %> / <%= review.course%></span><br> <%= review.title %>
+										<% end %>
+								</div>
+								<p class="notelink">
+									<% note = (review.article.get_meta.first(60) if review.article.get_meta.length > 0) %>
+		    					<%= link_to  note+" ......",testimonial_path(review), class: "txtlink" %>
+								</p>
+	    					<%= link_to "閱讀全文", testimonial_path(review), class: "notemore" %>
+							</div>
+					
+						</div>
+    			 <!-- 1 end -->   		
+			  <% end %>
 
 				<!--list-->
 

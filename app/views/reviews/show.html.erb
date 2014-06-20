@@ -52,16 +52,16 @@
     			<h1>ebs 師生證言</h1>
     		</div>
     		<div class="col-md-10 col-md-offset-1 col-xs-12 notepaper">
-    			<!-- 1 -->
-    			<div class="notebox">
-    				<div class="notephoto hidden-xs">
-    					<div><%= image_tag(@review.cover, :class=> "studentphoto1") %></div>
-    					<div class="sname"><%= @review.name %></div>
-    				</div>
-    				<div class="notetxt">
-    					<div class="notetitle"><span><%= @review.course %></span><br><%= @review.title %></div>
-    				</div>    				
-    			</div>
+	    		<!-- 1 -->
+	    		<div class="notebox">
+							<div class="notephoto hidden-xs">
+								<div><%= image_tag(@review.cover, :class=> "studentphoto1") %></div>
+							</div>
+							<div class="notetxt">
+									<div class="notetitle"><span><%= @review.name %> / <%= @review.course %></span><br><%= @review.title %></div>
+							</div>
+					</div>
+
     			<div class="col-xs-12">
 						<p class="writings"  id="articleContent"/>
 	    		</div>

@@ -3,24 +3,24 @@
 	<div class="studentbox <%= "hidden-xs" if review == @reviews.last %>">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <th align="left" valign="top"><%= image_tag(review.cover) %><br>
-            <span><%= review.name%></span></th>
-          <td align="left" valign="top">
-          <p>
-         	 <%= link_to  testimonial_path(review)  do %>
-         	 	<span><%= review.course%></span><br>
-         	 	<% if (review.title.length > 30) %>
-					<% note = review.title.first(30)  %>
-					<%= note+"..." %>
-				<% else %>
-         	 		<%= review.title %>
-         	 	<% end %>
-     	 	<% end %>
-           </p>
-            <a href="<%=  testimonial_path(review) %>">閱讀全文</a>
-            </td>
+          <td align="left" valign="top" class="pic"><%= image_tag(review.cover) %></td>
+          <td align="left" valign="top" class="text">
+          <div class="name"><%= review.name%> / <%= review.course%></div>
+          <div class="title">
+          		<%= link_to  testimonial_path(review)  do %>
+          			
+          			<% if (review.title.length > 30) %>
+			         	 		<% note = review.title.first(30)  %>
+			         	 		<%= note+"..." %>
+		         	  <% else %>
+			         	 		<%= review.title %>
+		         	 	<% end %>
+		         	 	
+          		<% end %>
+          </div>
+          <div class="more"><a href="<%=  testimonial_path(review) %>">閱讀全文</a></div></td>
         </tr>
       </table>
-    </div>
+    </div> 
     
 <% end %>
