@@ -128,7 +128,7 @@ position:relative
 .studentbox .more a{display:inline-block;padding:0 0 0 24px;
 background:url(../images/smore.gif) 0 5px no-repeat;color:#00879c;font-size: 0.8em;}
 .studentbox .more a:hover{background:url(../images/smore2.gif) 0 5px no-repeat}
-.wrapper1 .btn{background:none;border:1px solid #522E92;color:#522E92;margin:0 0 0 15px}
+.wrapper1 .btn{background:none;border:1px solid #522E92;color:#522E92;margin:0 0 0 15px;position:relative;top:-6px}
 .wrapper1 .btn:hover{background:#522E92;color:#fff}
 
 /*
@@ -604,7 +604,7 @@ background-position: 0% 100%;
 .m-wrapper1 h3{padding:0 0 0px 0;clear:both}
 .m-wrapper1 .studentbox{width:100%;float:none;padding:20px 0;border-top:1px solid #E1E1E1;}
 .m-wrapper1 .btn{background:none;border:1px solid #522E92;color:#522E92;margin:0 0 0 15px;
-position:relative;top:3px}
+position:relative;top:-1px}
 .m-wrapper1 .btn:hover{background:#522E92;color:#fff}
 
 .m-wrapper2{padding:5% 0 10% 0;font-size:.9em;position:relative}
