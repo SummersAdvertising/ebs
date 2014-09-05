@@ -27,7 +27,7 @@ class ContactsController < ApplicationController
 		      	#ContactMailer.delay.new_contact( @contact )
 
 		      	#**** MAIL
-		      	TicketMailer.delay.sendTicket(@contact)
+		      	TicketMailer.sendTicket(@contact).deliver
 		      	#****		        
 
 		        #format.html { redirect_to root_url, notice: '感謝您的聯絡，請等候服務專員聯絡！' }
